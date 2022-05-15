@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a218e078245d1c4aa89b3d9bd66369c, type: 3}
-  m_Name: Card_2
+  m_Name: Card_4
   m_EditorClassIdentifier: 
   cardType: 0
   cardImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  cardName: Defensivo
+  cardName: Super Atacante
   desciption: Second card enemy
   healthPoints: 10
-  defense: 10
-  attack: 1
-  elementalType: {fileID: 11400000, guid: f73041cf3920b6846a3ab3f006eb3b19, type: 2}
+  defense: 0
+  attack: 5
+  elementalType: {fileID: 11400000, guid: 84535cef315f33b49a90c59446cc5dc7, type: 2}
   addHealthPoints: 0
   removeHealthPoints: 0
   habilityDesciption: 

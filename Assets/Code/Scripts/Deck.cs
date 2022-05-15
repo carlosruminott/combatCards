@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
+    [Header("Scriptable Card List")]
     [SerializeField] private List<BaseCard> _cardList;
+
+    [Space(20)]
+    [Header("Card Prefab")]
     [SerializeField] private GameObject _card;
+
+    [Space(20)]
+    [Header("Config")]
     [SerializeField] private int _initialNumHandCards = 2;
     [SerializeField] private float _positionFirstCard = -5f;
     [SerializeField] private float _distanceOtherCard = 3.5f;
+
     private BaseCard _tempBC;
 
     void Start()

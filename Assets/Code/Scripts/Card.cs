@@ -9,7 +9,7 @@ public class Card : MonoBehaviour
 
     [SerializeField] private BaseCard _cardInfo;
     //[SerializeField] private Image _image;
-    [SerializeField] private TextMeshPro _name, _description, _type, _hp, _defense, _attack, _elementalType, _hability;
+    [SerializeField] private TextMeshPro _name, _description, _hp, _defense, _attack, _elementalType, _hability;
 
     public BaseCard CardInfo
     {
@@ -26,16 +26,15 @@ public class Card : MonoBehaviour
     void Start()
     {
         //Debug.Log(cardInfo.cardType);
-        //Debug.Log(cardInfo.cardName);
+        //Debug.Log(_cardInfo.elementalType);
 
         //_image.sprite = _cardInfo.cardImage;
         _name.text = _cardInfo.cardName;
-        /*_description.text = _cardInfo.desciption;
-        _type.text = _cardInfo.cardType.ToString();
-        _hp.text = _cardInfo.healthPoints.ToString();
-        _defense.text = _cardInfo.defense.ToString();
-        _attack.text = _cardInfo.attack.ToString();
-        //_elementalType.text = _cardInfo.elementalType.elementName;
-        _hability.text = _cardInfo.habilityDesciption;*/
+        _description.text = _cardInfo.desciption;
+        _hp.text = "HP: "+_cardInfo.healthPoints.ToString();
+        _defense.text = "Def: "+_cardInfo.defense.ToString();
+        _attack.text = "Att: "+_cardInfo.attack.ToString();
+        _elementalType.text = "Type: "+_cardInfo.elementalType.ToString();
+        //_hability.text = _cardInfo.habilityDesciption;
     }
 }

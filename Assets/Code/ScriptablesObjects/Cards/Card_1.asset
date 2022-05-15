@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Card_1
   m_EditorClassIdentifier: 
   cardType: 0
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   cardName: Hero
   desciption: First Card of the game
   healthPoints: 20

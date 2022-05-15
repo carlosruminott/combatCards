@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class Card : MonoBehaviour
 {
 
     [SerializeField] private BaseCard _cardInfo;
-    //[SerializeField] private Image _image;
+    [SerializeField] private SpriteRenderer _image;
     [SerializeField] private TextMeshPro _name, _description, _hp, _defense, _attack, _elementalType, _hability;
 
     public BaseCard CardInfo
@@ -28,7 +27,7 @@ public class Card : MonoBehaviour
         //Debug.Log(cardInfo.cardType);
         //Debug.Log(_cardInfo.elementalType);
 
-        //_image.sprite = _cardInfo.cardImage;
+        _image.sprite = _cardInfo.cardImage;
         _name.text = _cardInfo.cardName;
         _description.text = _cardInfo.desciption;
         _hp.text = "HP: "+_cardInfo.healthPoints.ToString();

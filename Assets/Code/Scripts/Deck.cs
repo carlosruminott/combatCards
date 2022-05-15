@@ -11,12 +11,6 @@ public class Deck : MonoBehaviour
     [Header("Card Prefab")]
     [SerializeField] private GameObject _card;
 
-    [Space(20)]
-    [Header("Config")]
-    [SerializeField] private int _initialNumHandCards = 2;
-    [SerializeField] private float _positionFirstCard = -5f;
-    [SerializeField] private float _distanceOtherCard = 3.5f;
-
     private BaseCard _tempBC;
     [SerializeField] private List<GameObject> _deck = new List<GameObject>();
 
@@ -24,18 +18,17 @@ public class Deck : MonoBehaviour
     {
         Card cardScript = _card.GetComponent<Card>();
         Shufle();
-        GetHand(cardScript);
+        InstantiateDeckChilds(cardScript);
+        //GetHand();
     }
 
-    private void GetHand(Card card)
+    private void InstantiateDeckChilds(Card card)
     {
-        float posX = _positionFirstCard;
-        for (int i = 0; i <= _initialNumHandCards; i++)
+        for (int i = 0; i <= (_cardList.Count-1); i++)
         {
             card.CardInfo = _cardList[i];
             _deck.Add(_card);
-            Instantiate(_deck[i], new Vector3(posX, 0, 0), Quaternion.identity);
-            posX += _distanceOtherCard;
+            Instantiate(_card, gameObject.transform);
         }
     }
 
@@ -53,11 +46,15 @@ public class Deck : MonoBehaviour
     public void ReShufle()
     {
         Card cardScript = _card.GetComponent<Card>();
-        foreach (var item in _deck)
+        Transform deckTransform = gameObject.transform;
+        int childCount = gameObject.transform.childCount - 1;
+        for (int i = 0; i <= childCount; i++)
         {
-            item.SetActive(false);
+            GameObject child = deckTransform.GetChild(i).gameObject;
+            Destroy(child);
         }
         Shufle();
-        GetHand(cardScript);
+        InstantiateDeckChilds(cardScript);
+        //GetHand();
     }
 }

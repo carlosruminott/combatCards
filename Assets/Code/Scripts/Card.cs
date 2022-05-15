@@ -11,6 +11,18 @@ public class Card : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private TextMeshPro _name, _description, _type, _hp, _defense, _attack, _elementalType, _hability;
 
+    public BaseCard CardInfo
+    {
+        get
+        {
+            return _cardInfo;
+        }
+        set
+        {
+            _cardInfo = value;
+        }
+    }
+
     void Start()
     {
         //Debug.Log(cardInfo.cardType);

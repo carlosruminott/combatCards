@@ -242,7 +242,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8794da69935fed844b651955b42492d3, type: 2}
   _card: {fileID: 2458508800859397210, guid: e09fa498e4270764399b1d27000949ae, type: 3}
   _initialNumHandCards: 2
-  positionFirstCard: 0
+  _positionFirstCard: -5
+  _distanceOtherCard: 3.5
 --- !u!4 &2099855630
 Transform:
   m_ObjectHideFlags: 0

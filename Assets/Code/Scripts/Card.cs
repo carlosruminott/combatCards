@@ -7,16 +7,23 @@ using TMPro;
 public class Card : MonoBehaviour
 {
 
-    [SerializeField] private BaseCard cardInfo;
-
-    /*private string cardType;
-    private Image cardImage;
-    private string cardType;
-    private TextMeshProUGUI cardDescription,*/
+    [SerializeField] private BaseCard _cardInfo;
+    [SerializeField] private Image _image;
+    [SerializeField] private TextMeshPro _name, _description, _type, _hp, _defense, _attack, _elementalType, _hability;
 
     void Start()
     {
-        Debug.Log(cardInfo.cardType);
-        Debug.Log(cardInfo.cardName);
+        //Debug.Log(cardInfo.cardType);
+        //Debug.Log(cardInfo.cardName);
+
+        _image.sprite = _cardInfo.cardImage;
+        _name.text = _cardInfo.cardName;
+        _description.text = _cardInfo.desciption;
+        _type.text = _cardInfo.cardType.ToString();
+        _hp.text = _cardInfo.healthPoints.ToString();
+        _defense.text = _cardInfo.defense.ToString();
+        _attack.text = _cardInfo.attack.ToString();
+        //_elementalType.text = _cardInfo.elementalType.elementName;
+        _hability.text = _cardInfo.habilityDesciption;
     }
 }

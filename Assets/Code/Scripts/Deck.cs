@@ -12,7 +12,7 @@ public class Deck : MonoBehaviour
     [SerializeField] private GameObject _card;
 
     private BaseCard _tempBC;
-    [SerializeField] private List<GameObject> _deck = new List<GameObject>();
+    public List<GameObject> deckList = new List<GameObject>();
 
     void Start()
     {
@@ -27,8 +27,9 @@ public class Deck : MonoBehaviour
         for (int i = 0; i <= (_cardList.Count-1); i++)
         {
             card.CardInfo = _cardList[i];
-            _deck.Add(_card);
-            Instantiate(_card, gameObject.transform);
+            deckList.Add(_card);
+            //Instantiate(_card, gameObject.transform);
+            Instantiate(deckList[i], gameObject.transform);
         }
     }
 
@@ -52,9 +53,11 @@ public class Deck : MonoBehaviour
         {
             GameObject child = deckTransform.GetChild(i).gameObject;
             Destroy(child);
+            deckList.Clear();
         }
         Shufle();
         InstantiateDeckChilds(cardScript);
         //GetHand();
+        Hand.EventGetHand();
     }
 }

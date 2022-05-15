@@ -18,6 +18,7 @@ public class Deck : MonoBehaviour
     [SerializeField] private float _distanceOtherCard = 3.5f;
 
     private BaseCard _tempBC;
+    [SerializeField] private List<GameObject> _deck = new List<GameObject>();
 
     void Start()
     {
@@ -32,7 +33,8 @@ public class Deck : MonoBehaviour
         for (int i = 0; i <= _initialNumHandCards; i++)
         {
             card.CardInfo = _cardList[i];
-            Instantiate(_card, new Vector3(posX,0,0), Quaternion.identity);
+            _deck.Add(_card);
+            Instantiate(_deck[i], new Vector3(posX, 0, 0), Quaternion.identity);
             posX += _distanceOtherCard;
         }
     }
@@ -46,5 +48,16 @@ public class Deck : MonoBehaviour
             _cardList[rnd] = _cardList[i];
             _cardList[i] = _tempBC;
         }
+    }
+
+    public void ReShufle()
+    {
+        Card cardScript = _card.GetComponent<Card>();
+        foreach (var item in _deck)
+        {
+            item.SetActive(false);
+        }
+        Shufle();
+        GetHand(cardScript);
     }
 }

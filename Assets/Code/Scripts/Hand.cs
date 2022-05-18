@@ -77,40 +77,27 @@ public class Hand : MonoBehaviour
             posX += _distanceOtherCard;
         }
     }
-    
-    /*
-    private void GetHand()
+
+    public void ShuffleHand()
     {
-        float posX = _positionFirstCard;
-        Transform deckTransform = _deck.transform;
-        for (int i = 0; i <= _initialNumHandCards; i++)
+        foreach (var item in _handList)
         {
-            GameObject child = deckTransform.GetChild(i).gameObject;
-            child.transform.position = new Vector3(posX, 0, 0);
-            var go = (GameObject) Instantiate(child, gameObject.transform);
-            go.transform.position = new Vector3(posX, 0, 0);
-            go.SetActive(true);
-            handList.Add(go);
-            Destroy(child);
-            posX += _distanceOtherCard;
+            _deckList.Add(item);
+        }
+        RemoveCardsFromHand();
+        _deckScript.CardList.Clear();
+        _deckScript.CardList = new List<BaseCard>(_deckList);
+        _handList.Clear();
+        _deckList.Clear();
+        _deckScript.ShufleAndDraw();
+    }
+
+    private void RemoveCardsFromHand()
+    {
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
         }
     }
 
-
-    private void ShuffleHand()
-    {
-        Transform handTransform = gameObject.transform;
-        int handCount = handList.Count - 1;
-        for (int i = 0; i <= handCount; i++)
-        {
-            GameObject child = handTransform.GetChild(i).gameObject;
-            Destroy(child);
-        }
-    }
-
-    public void ShufleAndGetNewHand()
-    {
-        StartShuffle();
-        StartHand();
-    */
 }

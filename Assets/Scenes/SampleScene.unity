@@ -470,9 +470,9 @@ RectTransform:
   m_Father: {fileID: 1986459612}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -525}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 80, y: 15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035421689
@@ -519,9 +519,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2099855629}
-        m_TargetAssemblyTypeName: Deck, Assembly-CSharp
-        m_MethodName: ReShufle
+      - m_Target: {fileID: 483525689}
+        m_TargetAssemblyTypeName: Hand, Assembly-CSharp
+        m_MethodName: ShuffleHand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -741,7 +741,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 596ba3349cbc99f49af8c6b1eec53272, type: 2}
   - {fileID: 11400000, guid: 9702e4b4796880c449596b58bef8ecc3, type: 2}
   _card: {fileID: 2458508800859397210, guid: e09fa498e4270764399b1d27000949ae, type: 3}
-  deckList: []
 --- !u!4 &2099855630
 Transform:
   m_ObjectHideFlags: 0

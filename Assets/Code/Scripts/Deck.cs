@@ -14,12 +14,23 @@ public class Deck : MonoBehaviour
     private BaseCard _tempBC;
     public List<GameObject> deckList = new List<GameObject>();
 
+    public List<BaseCard> CardList
+    {
+        get
+        {
+            return _cardList;
+        }
+        set
+        {
+            _cardList = value;
+        }
+    }
+
     void Start()
     {
         Card cardScript = _card.GetComponent<Card>();
         Shufle();
         InstantiateDeckChilds(cardScript);
-        //GetHand();
     }
 
     private void InstantiateDeckChilds(Card card)
@@ -28,9 +39,9 @@ public class Deck : MonoBehaviour
         {
             card.CardInfo = _cardList[i];
             deckList.Add(_card);
-            //Instantiate(_card, gameObject.transform);
             Instantiate(deckList[i], gameObject.transform);
         }
+        Hand.EventGetHand();
     }
 
     private void Shufle()
@@ -46,6 +57,7 @@ public class Deck : MonoBehaviour
 
     public void ReShufle()
     {
+        Debug.Log("click");
         Card cardScript = _card.GetComponent<Card>();
         Transform deckTransform = gameObject.transform;
         int childCount = gameObject.transform.childCount - 1;
@@ -53,8 +65,8 @@ public class Deck : MonoBehaviour
         {
             GameObject child = deckTransform.GetChild(i).gameObject;
             Destroy(child);
-            deckList.Clear();
         }
+        deckList.Clear();
         Shufle();
         InstantiateDeckChilds(cardScript);
         //GetHand();

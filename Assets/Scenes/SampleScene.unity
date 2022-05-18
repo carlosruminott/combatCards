@@ -153,9 +153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deck: {fileID: 2099855628}
+  _card: {fileID: 2458508800859397210, guid: e09fa498e4270764399b1d27000949ae, type: 3}
   _initialNumHandCards: 2
   _positionFirstCard: -5
   _distanceOtherCard: 3.5
+  _handList: []
+  _deckList: []
 --- !u!4 &483525690
 Transform:
   m_ObjectHideFlags: 0
@@ -738,7 +741,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 596ba3349cbc99f49af8c6b1eec53272, type: 2}
   - {fileID: 11400000, guid: 9702e4b4796880c449596b58bef8ecc3, type: 2}
   _card: {fileID: 2458508800859397210, guid: e09fa498e4270764399b1d27000949ae, type: 3}
-  _deck: []
+  deckList: []
 --- !u!4 &2099855630
 Transform:
   m_ObjectHideFlags: 0

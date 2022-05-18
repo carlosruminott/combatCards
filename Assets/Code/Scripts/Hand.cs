@@ -7,6 +7,11 @@ public class Hand : MonoBehaviour
     [Header("Deck")]
     [SerializeField] private GameObject _deck;
 
+    [Space(10)]
+    [Header("Card Prefab")]
+    [SerializeField] private GameObject _card;
+
+    [Space(10)]
     [Header("Config")]
     [SerializeField] private int _initialNumHandCards = 2;
     [SerializeField] private float _positionFirstCard = -5f;
@@ -14,18 +19,62 @@ public class Hand : MonoBehaviour
 
     [Space(10)]
     [Header("Dynamic Hand")]
-    [SerializeField] private List<GameObject> handList;
+    [SerializeField] private List<BaseCard> _handList;
+    [SerializeField] private List<BaseCard> _deckList;
 
     public static System.Action EventGetHand;
 
+    private Card cardScript;
+
     void Start()
     {
-        //deckList = _deck.GetComponent<Deck>().deckList;
-        //GetHand();
-        EventGetHand += ShufleAndGetNewHand;
-        StartCoroutine(StartHand());
+        cardScript = _card.GetComponent<Card>();
     }
 
+    private void OnEnable()
+    {
+        EventGetHand += DeckList;
+    }
+
+    private void OnDisable()
+    {
+        EventGetHand -= DeckList;
+    }
+
+    public void DeckList()
+    {
+        var cardList = _deck.GetComponent<Deck>().CardList;
+        foreach (var item in cardList)
+        {
+            //Debug.Log(item.cardName);
+            _deckList.Add(item);
+        }
+        HandList();
+        InstantiateCard();
+    }
+
+    private void HandList()
+    {
+        for (int i = 0; i <= _initialNumHandCards; i++)
+        {
+            _handList.Add(_deckList[i]);
+        }
+    }
+
+    private void InstantiateCard()
+    {
+        float posX = _positionFirstCard;
+        foreach (var item in _handList)
+        {
+            cardScript.CardInfo = item;
+            var go = (GameObject) Instantiate(_card, gameObject.transform);
+            go.transform.position = new Vector3(posX, 0, 0);
+            go.SetActive(true);
+            posX += _distanceOtherCard;
+        }
+    }
+    
+    /*
     private void GetHand()
     {
         float posX = _positionFirstCard;
@@ -43,14 +92,6 @@ public class Hand : MonoBehaviour
         }
     }
 
-    private IEnumerator StartHand()
-    {
-        yield return new WaitForSeconds(2);
-        //Transform deckTransform = _deck.transform;
-        //GameObject child = deckTransform.GetChild(0).gameObject;
-        //Instantiate(child, gameObject.transform);
-        GetHand();
-    }
 
     private void ShuffleHand()
     {
@@ -65,7 +106,7 @@ public class Hand : MonoBehaviour
 
     public void ShufleAndGetNewHand()
     {
-        ShuffleHand();
-        StartCoroutine(StartHand());
-    }
+        StartShuffle();
+        StartHand();
+    */
 }

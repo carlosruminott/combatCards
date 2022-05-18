@@ -6,6 +6,7 @@ public class Deck : MonoBehaviour
 {
     [Header("Scriptable Card List")]
     [SerializeField] private List<BaseCard> _cardList;
+    //public List<BaseCard> CardList;
 
     [Space(20)]
     [Header("Card Prefab")]

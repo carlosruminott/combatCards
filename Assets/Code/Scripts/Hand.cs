@@ -20,15 +20,18 @@ public class Hand : MonoBehaviour
     [Space(10)]
     [Header("Dynamic Hand")]
     [SerializeField] private List<BaseCard> _handList;
+    [Header("Dynamic Deck")]
     [SerializeField] private List<BaseCard> _deckList;
 
     public static System.Action EventGetHand;
 
-    private Card cardScript;
+    private Card _cardScript;
+    private Deck _deckScript;
 
     void Start()
     {
-        cardScript = _card.GetComponent<Card>();
+        _cardScript = _card.GetComponent<Card>();
+        _deckScript = _deck.GetComponent<Deck>();
     }
 
     private void OnEnable()
@@ -43,7 +46,7 @@ public class Hand : MonoBehaviour
 
     public void DeckList()
     {
-        var cardList = _deck.GetComponent<Deck>().CardList;
+        var cardList = _deckScript.CardList;
         foreach (var item in cardList)
         {
             //Debug.Log(item.cardName);
@@ -58,6 +61,7 @@ public class Hand : MonoBehaviour
         for (int i = 0; i <= _initialNumHandCards; i++)
         {
             _handList.Add(_deckList[i]);
+            _deckList.Remove(_deckList[i]);
         }
     }
 
@@ -66,7 +70,7 @@ public class Hand : MonoBehaviour
         float posX = _positionFirstCard;
         foreach (var item in _handList)
         {
-            cardScript.CardInfo = item;
+            _cardScript.CardInfo = item;
             var go = (GameObject) Instantiate(_card, gameObject.transform);
             go.transform.position = new Vector3(posX, 0, 0);
             go.SetActive(true);

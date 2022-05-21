@@ -8,6 +8,7 @@ namespace Game
     {
         [Header("Scriptable Card List")]
         [SerializeField] private List<BaseCard> _cardList;
+        [SerializeField] private DeckList _deckList;
 
         private BaseCard _tempBC;
 

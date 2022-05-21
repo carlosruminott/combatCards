@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d36b87e180d06148a58dc396e13ec17, type: 3}
   m_Name: Deck
   m_EditorClassIdentifier: 
-  _cardList: []
+  cardList: []

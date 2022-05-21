@@ -8,8 +8,7 @@ namespace Game
     public class DeckList : ScriptableObject
     {
         [Header("Scriptable Card List")]
-        [SerializeField] private List<BaseCard> _cardList;
+        public List<BaseCard> cardList;
 
-        public List<BaseCard> CardList { get; set; }
     }
 }

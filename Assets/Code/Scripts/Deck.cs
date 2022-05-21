@@ -1,4 +1,4 @@
-using System.Collections;
+using Game.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,19 +10,12 @@ namespace Game
         [SerializeField] private List<BaseCard> _cardList;
         [SerializeField] private DeckList _deckList;
 
+        [Header("Dynamic Deck")]
+        [SerializeField] private List<BaseCard> _deckListDynamic;
+
         private BaseCard _tempBC;
 
-        public List<BaseCard> CardList
-        {
-            get
-            {
-                return _cardList;
-            }
-            set
-            {
-                _cardList = value;
-            }
-        }
+        public List<BaseCard> CardList { get; set; }
 
         //private void Awake()
         //{
@@ -33,13 +26,14 @@ namespace Game
         {
             ShufleAndDraw();
             //EventDispatcher.Shufle?.Invoke();
+            //_deckList.cardList.Shuffle();
         }
 
         private void Shufle()
         {
             for (int i = 0; i < _cardList.Count; i++)
             {
-                int rnd = Random.Range(0, _cardList.Count);
+                int rnd = UnityEngine.Random.Range(0, _cardList.Count);
                 _tempBC = _cardList[rnd];
                 _cardList[rnd] = _cardList[i];
                 _cardList[i] = _tempBC;
@@ -48,8 +42,9 @@ namespace Game
 
         public void ShufleAndDraw()
         {
-            Shufle();
+            //Shufle();
             //Hand.EventGetHand();
+            _deckList.cardList.Shuffle();
             EventDispatcher.GetHand?.Invoke();
         }
     }

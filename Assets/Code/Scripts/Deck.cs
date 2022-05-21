@@ -2,49 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Deck : MonoBehaviour
+namespace Game
 {
-    [Header("Scriptable Card List")]
-    [SerializeField] private List<BaseCard> _cardList;
-
-    [Space(20)]
-    [Header("Card Prefab")]
-    [SerializeField] private GameObject _card;
-
-    private BaseCard _tempBC;
-
-    public List<BaseCard> CardList
+    public class Deck : MonoBehaviour
     {
-        get
+        [Header("Scriptable Card List")]
+        [SerializeField] private List<BaseCard> _cardList;
+
+        private BaseCard _tempBC;
+
+        public List<BaseCard> CardList
         {
-            return _cardList;
+            get
+            {
+                return _cardList;
+            }
+            set
+            {
+                _cardList = value;
+            }
         }
-        set
+
+        //private void Awake()
+        //{
+        //    EventDispatcher.Shufle.AddListener(ShufleAndDraw);
+        //}
+
+        void Start()
         {
-            _cardList = value;
+            ShufleAndDraw();
+            //EventDispatcher.Shufle?.Invoke();
         }
-    }
 
-    void Start()
-    {
-        Shufle();
-        Hand.EventGetHand();
-    }
-
-    private void Shufle()
-    {
-        for (int i = 0; i < _cardList.Count; i++)
+        private void Shufle()
         {
-            int rnd = Random.Range(0, _cardList.Count);
-            _tempBC = _cardList[rnd];
-            _cardList[rnd] = _cardList[i];
-            _cardList[i] = _tempBC;
+            for (int i = 0; i < _cardList.Count; i++)
+            {
+                int rnd = Random.Range(0, _cardList.Count);
+                _tempBC = _cardList[rnd];
+                _cardList[rnd] = _cardList[i];
+                _cardList[i] = _tempBC;
+            }
         }
-    }
 
-    public void ShufleAndDraw()
-    {
-        Shufle();
-        Hand.EventGetHand();
+        public void ShufleAndDraw()
+        {
+            Shufle();
+            //Hand.EventGetHand();
+            EventDispatcher.GetHand?.Invoke();
+        }
     }
 }

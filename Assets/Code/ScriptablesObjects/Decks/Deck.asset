@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d36b87e180d06148a58dc396e13ec17, type: 3}
   m_Name: Deck
   m_EditorClassIdentifier: 
-  cardList: []
+  cardList:
+  - {fileID: 11400000, guid: d547a9cd61bb67f43b4bac064cf75a28, type: 2}
+  - {fileID: 11400000, guid: 596ba3349cbc99f49af8c6b1eec53272, type: 2}
+  - {fileID: 11400000, guid: 9702e4b4796880c449596b58bef8ecc3, type: 2}
+  - {fileID: 11400000, guid: 46fc011792c508f4e947eae5849dc5cc, type: 2}
+  - {fileID: 11400000, guid: 8794da69935fed844b651955b42492d3, type: 2}

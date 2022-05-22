@@ -7,7 +7,7 @@ namespace Game
     public class Hand : MonoBehaviour
     {
         [Header("Deck")]
-        [SerializeField] private GameObject _deck;
+        [SerializeField] private DeckList _soDeckList;
 
         [Space(10)]
         [Header("Card Prefab")]
@@ -28,35 +28,17 @@ namespace Game
         //public static System.Action EventGetHand;
 
         private Card _cardScript;
-        private Deck _deckScript;
 
         private void Awake()
         {
+            _cardScript = _card.GetComponent<Card>();
             EventDispatcher.GetHand.AddListener(DeckList);
         }
 
-        void Start()
-        {
-            _cardScript = _card.GetComponent<Card>();
-            _deckScript = _deck.GetComponent<Deck>();
-        }
-
-        //private void OnEnable()
-        //{
-        //    EventGetHand += DeckList;
-        //}
-
-        //private void OnDisable()
-        //{
-        //    EventGetHand -= DeckList;
-        //}
-
         public void DeckList()
         {
-            var cardList = _deckScript.CardList;
-            foreach (var item in cardList)
+            foreach (var item in _soDeckList.cardList)
             {
-                //Debug.Log(item.cardName);
                 _deckList.Add(item);
             }
             HandList();
@@ -67,8 +49,8 @@ namespace Game
         {
             for (int i = 0; i <= _initialNumHandCards; i++)
             {
-                _handList.Add(_deckList[i]);
-                _deckList.Remove(_deckList[i]);
+                _handList.Add(_deckList[0]);
+                _deckList.Remove(_deckList[0]);
             }
         }
 
@@ -92,11 +74,12 @@ namespace Game
                 _deckList.Add(item);
             }
             RemoveCardsFromHand();
-            _deckScript.CardList.Clear();
-            _deckScript.CardList = new List<BaseCard>(_deckList);
+            _soDeckList.cardList.Clear();
+            _soDeckList.cardList = new List<BaseCard>(_deckList);
             _handList.Clear();
             _deckList.Clear();
-            _deckScript.ShufleAndDraw();
+            //_deckScript.ShufleAndDraw();
+            EventDispatcher.Shuffle?.Invoke();
         }
 
         private void RemoveCardsFromHand()

@@ -1,8 +1,9 @@
 using Game.Utils;
+using Game.Logic;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game
+namespace Game.Components
 {
     public class Deck : MonoBehaviour
     {

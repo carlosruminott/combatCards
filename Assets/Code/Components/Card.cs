@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-namespace Game
+namespace Game.Components
 {
     public class Card : MonoBehaviour
     {

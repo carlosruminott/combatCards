@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Game
+namespace Game.Logic
 {
     // sacado de: https://www.youtube.com/watch?v=38D8AbR8TVU
     public static class EventDispatcher

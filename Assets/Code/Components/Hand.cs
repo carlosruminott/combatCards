@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Logic;
 
-namespace Game
+namespace Game.Components
 {
     public class Hand : MonoBehaviour
     {

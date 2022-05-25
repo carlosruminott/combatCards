@@ -13,7 +13,7 @@ namespace Game.Logic
         public static UnityEvent Ability = new UnityEvent();
 
         // para pasar funcion con parametros
-        public static WhitParamEvent eventoconparamtro = new WhitParamEvent();
+        public static WhitParamEvent Discard = new WhitParamEvent();
     }
-    public class WhitParamEvent: UnityEvent<int> { }
+    public class WhitParamEvent: UnityEvent<BaseCard> { }
 }

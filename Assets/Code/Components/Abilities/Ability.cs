@@ -6,9 +6,10 @@ namespace Game.Components.Abilities
 {
     public class Ability : MonoBehaviour
     {
-        public virtual void OnDiscard() { }
-        public virtual void OnPlayToField() { }
+        public virtual void PlayAbility() { }
         public virtual void OnActivate() { }
+        public virtual void OnPlayToField() { }
         public virtual void OnceByTurn() { }
+        public virtual void OnDiscard() { }
     }
 }

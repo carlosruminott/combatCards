@@ -698,6 +698,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3243683399188677078}
   - component: {fileID: 2458508800859397211}
+  - component: {fileID: 7926764515077176214}
+  - component: {fileID: 1974306726106206958}
+  - component: {fileID: 1586836841621433289}
+  - component: {fileID: -2821557640269710477}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -742,7 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab33f508e8c8d342bf3cd1f1627912f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardInfo: {fileID: 11400000, guid: 46fc011792c508f4e947eae5849dc5cc, type: 2}
+  _cardInfo: {fileID: 11400000, guid: 596ba3349cbc99f49af8c6b1eec53272, type: 2}
   _image: {fileID: 6121561520350845827}
   _name: {fileID: 2515867585502623754}
   _description: {fileID: 6397188269296477753}
@@ -752,6 +756,106 @@ MonoBehaviour:
   _elementalType: {fileID: 6522828396064890496}
   _hability: {fileID: 0}
   _characterFields: {fileID: 2923871640872028812}
+--- !u!114 &7926764515077176214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458508800859397210}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3945ef7302cf0f4096322fbf3c19a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1974306726106206958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458508800859397210}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 979a4d8b58d3b2d42a65ee689b321232, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7926764515077176214}
+        m_TargetAssemblyTypeName: Game.Components.PlayCard, Assembly-CSharp
+        m_MethodName: PlayThisCard
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 546aca75-16ff-4a31-8a98-24f9758e3e07
+    m_ActionName: Card/PlayCard[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e6daa992-87b7-4525-91f1-6393107657fd
+    m_ActionName: Position/New action[/Mouse/position]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Mouse
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!61 &1586836841621433289
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458508800859397210}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.5, y: 4.5}
+  m_EdgeRadius: 0
+--- !u!114 &-2821557640269710477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458508800859397210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5de04a679d6efd45937f720f23aa7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2923871640872028812
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +970,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  m_Color: {r: 0.7830189, g: 0.23933785, b: 0.23933785, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

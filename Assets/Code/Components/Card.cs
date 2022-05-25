@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Game.Components.Abilities;
 
 namespace Game.Components
 {
@@ -12,6 +13,8 @@ namespace Game.Components
         [SerializeField] private SpriteRenderer _image;
         [SerializeField] private TextMeshPro _name, _description, _hp, _defense, _attack, _elementalType, _hability;
         [SerializeField] private GameObject _characterFields;
+
+        private Ability _ability;
 
         public BaseCard CardInfo
         {
@@ -33,6 +36,15 @@ namespace Game.Components
             _image.sprite = _cardInfo.cardImage;
             _name.text = _cardInfo.cardName;
             _description.text = _cardInfo.desciption;
+
+
+            if (_cardInfo.ability != null)
+            {
+                var cardAbility = _cardInfo.ability;
+                //TODO: ver cuando ejecutamos habilidad segun metodos de eactivación
+                _ability = cardAbility.GetComponent(cardAbility.name) as Ability;
+                _ability.OnActivate();
+            }
 
             if (_cardInfo.cardType.ToString() == "Character")
             {

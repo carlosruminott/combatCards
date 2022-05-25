@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "Card", menuName = "Nueva Carta", order = 2)]
 public class BaseCard : ScriptableObject
@@ -33,13 +34,13 @@ public class BaseCard : ScriptableObject
     [Header("ElementType")]
     public ScriptableObject elementalType;
 
-    [Space(20)]
+    /*[Space(20)]
     [Header("Actions")]
     public int addHealthPoints;
-    public int removeHealthPoints;
+    public int removeHealthPoints;*/
 
     [Space(20)]
-    [Header("Hability")]
-    [TextArea(3, 10)] public string habilityDesciption;
-
+    [Header("Ability")]
+    public GameObject ability;
+    [TextArea(3, 10)] public string abilityDesciption;
 }

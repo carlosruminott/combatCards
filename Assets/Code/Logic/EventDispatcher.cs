@@ -10,7 +10,8 @@ namespace Game.Logic
     {
         public static UnityEvent Shuffle = new UnityEvent();
         public static UnityEvent GetHand = new UnityEvent();
-        
+        public static UnityEvent Ability = new UnityEvent();
+
         // para pasar funcion con parametros
         public static WhitParamEvent eventoconparamtro = new WhitParamEvent();
     }

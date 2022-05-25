@@ -20,6 +20,5 @@ MonoBehaviour:
   defense: 5
   attack: 2
   elementalType: {fileID: 11400000, guid: feef4dfc1fce777498bcc8a7d0a8d7af, type: 2}
-  addHealthPoints: 0
-  removeHealthPoints: 0
-  habilityDesciption: 
+  ability: {fileID: 5121561287512968178, guid: 3bfceb9b433234441a84edf53f47aac0, type: 3}
+  abilityDesciption: 

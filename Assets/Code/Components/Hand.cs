@@ -55,13 +55,13 @@ namespace Game.Components
                 //_handList.Add(_deckList[0]);
                 //_deckList.Remove(_deckList[0]);
             //}
-            Debug.Log("deck count: "+ _deckList.Count);
+            //Debug.Log("deck count: "+ _deckList.Count);
             var numCards = _deckList.Count - 1;
             if(_initialNumHandCards < numCards)
             {
                 numCards = _initialNumHandCards;
             }
-            Debug.Log(numCards);
+            //Debug.Log(numCards);
             while (numCards >= 0)
             {
                 _handList.Add(_deckList[0]);

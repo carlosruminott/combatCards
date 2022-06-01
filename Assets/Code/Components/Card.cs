@@ -42,8 +42,8 @@ namespace Game.Components
             {
                 var cardAbility = _cardInfo.ability;
                 //TODO: ver cuando ejecutamos habilidad segun metodos de eactivación
-                _ability = cardAbility.GetComponent(cardAbility.name) as Ability;
-                _ability?.PlayAbility();
+                //_ability = cardAbility.GetComponent(cardAbility.name) as Ability;
+                //_ability?.PlayAbility();
             }
 
             if (_cardInfo.cardType.ToString() == "Character")

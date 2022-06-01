@@ -9,6 +9,7 @@ namespace Game.Components.Abilities
         public virtual void PlayAbility() { }
         public virtual void OnActivate() { }
         public virtual void OnPlayToField() { }
+        public virtual void OnAttachToCard() { }
         public virtual void OnceByTurn() { }
         public virtual void OnDiscard() { }
     }

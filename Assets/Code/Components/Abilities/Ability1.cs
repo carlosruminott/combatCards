@@ -14,7 +14,7 @@ namespace Game.Components.Abilities
 
         public override void OnActivate()
         {
-            Debug.Log("hola!");
+            Debug.Log("habilidad activada");
         }
 
     }

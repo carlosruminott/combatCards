@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Game.Logic;
+using Game.Components.Abilities;
 
 // tutorial: https://www.youtube.com/watch?v=JID7YaHAtKA
 
@@ -51,7 +52,13 @@ namespace Game.Components
             {
                 //Debug.Log("hit "+hits2D.collider.GetComponent<Card>().CardInfo.cardName);
                 Card card = hits2D.collider.GetComponent<Card>();
-                EventDispatcher.Discard?.Invoke(card.CardInfo);
+                if(card.CardInfo.ability)
+                {
+                    //Debug.Log(card.CardInfo.ability.name);
+                    Ability ability = card.CardInfo.ability.GetComponent<Ability>();
+                    ability.OnActivate();
+                }
+                //EventDispatcher.Discard?.Invoke(card.CardInfo);
             }
         }
 

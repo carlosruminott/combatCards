@@ -34,10 +34,12 @@ namespace Game.Components
         {
             _cardScript = _card.GetComponent<Card>();
             EventDispatcher.GetHand.AddListener(DeckList);
+            EventDispatcher.Discard.AddListener(RemoveSelectedCard);
         }
 
         public void DeckList()
         {
+            _deckList.Clear();
             foreach (var item in _soDeckList.cardList)
             {
                 _deckList.Add(item);
@@ -48,10 +50,23 @@ namespace Game.Components
 
         private void HandList()
         {
-            for (int i = 0; i <= _initialNumHandCards; i++)
+            //for (int i = 0; i <= _initialNumHandCards; i++)
+            //{
+                //_handList.Add(_deckList[0]);
+                //_deckList.Remove(_deckList[0]);
+            //}
+            Debug.Log("deck count: "+ _deckList.Count);
+            var numCards = _deckList.Count - 1;
+            if(_initialNumHandCards < numCards)
+            {
+                numCards = _initialNumHandCards;
+            }
+            Debug.Log(numCards);
+            while (numCards >= 0)
             {
                 _handList.Add(_deckList[0]);
                 _deckList.Remove(_deckList[0]);
+                numCards--;
             }
         }
 
@@ -61,7 +76,7 @@ namespace Game.Components
             foreach (var item in _handList)
             {
                 _cardScript.CardInfo = item;
-                var go = (GameObject) Instantiate(_card, gameObject.transform);
+                var go = (GameObject) Instantiate(_card, transform);
                 go.transform.position = new Vector3(posX, 0, 0);
                 go.SetActive(true);
                 posX += _distanceOtherCard;
@@ -70,16 +85,18 @@ namespace Game.Components
 
         public void ShuffleHand()
         {
-            foreach (var item in _handList)
+            if(_handList.Count > 0)
             {
-                _deckList.Add(item);
-            }
-            RemoveCardsFromHand();
-            _soDeckList.cardList.Clear();
-            _soDeckList.cardList = new List<BaseCard>(_deckList);
-            _handList.Clear();
-            _deckList.Clear();
-            //_deckScript.ShufleAndDraw();
+                foreach (var item in _handList)
+                {
+                    _deckList.Add(item);
+                }
+                RemoveCardsFromHand();
+                _soDeckList.cardList.Clear();
+                _soDeckList.cardList = new List<BaseCard>(_deckList);
+                _handList.Clear();
+                _deckList.Clear();
+            } 
             EventDispatcher.Shuffle?.Invoke();
         }
 
@@ -88,6 +105,21 @@ namespace Game.Components
             foreach (Transform child in transform)
             {
                 GameObject.Destroy(child.gameObject);
+            }
+        }
+
+        private void RemoveSelectedCard(BaseCard card)
+        {
+            foreach (Transform child in transform)
+            {
+                var cardName = child.gameObject.GetComponent<Card>().CardInfo.cardName;
+                if (card.cardName == cardName)
+                {
+                    _handList.Remove(card);
+                    _soDeckList.cardList.Remove(card);
+                    Destroy(child.gameObject);
+                    break;
+                }
             }
         }
 

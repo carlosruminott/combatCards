@@ -49,7 +49,7 @@ namespace Game.Components
 
             if(hits2D.collider != null)
             {
-                Debug.Log("hit "+hits2D.collider.GetComponent<Card>().CardInfo.cardName);
+                //Debug.Log("hit "+hits2D.collider.GetComponent<Card>().CardInfo.cardName);
                 Card card = hits2D.collider.GetComponent<Card>();
                 EventDispatcher.Discard?.Invoke(card.CardInfo);
             }

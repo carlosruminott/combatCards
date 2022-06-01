@@ -12,6 +12,7 @@ public class BaseCard : ScriptableObject
     {
         Character,
         Item,
+        AttachableItem,
         Field,
     };
 

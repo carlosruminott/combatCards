@@ -16,6 +16,7 @@ namespace Game.Components
 
         private void Awake()
         {
+            PopulateDeck();
             EventDispatcher.Shuffle.AddListener(ShufleAndDraw);
         }
 
@@ -24,10 +25,20 @@ namespace Game.Components
             ShufleAndDraw();
         }
 
+        private void PopulateDeck()
+        {
+            _deckList.cardList.Clear();
+            foreach (var card in _cardList)
+            {
+                _deckList.cardList.Add(card);
+            }
+        }
+
         public void ShufleAndDraw()
         {
             _deckList.cardList.Shuffle();
             EventDispatcher.GetHand?.Invoke();
         }
+
     }
 }

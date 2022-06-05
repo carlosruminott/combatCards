@@ -835,6 +835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8497916142787673897, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}
 --- !u!1 &1236038484

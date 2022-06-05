@@ -33,6 +33,12 @@ namespace Game.Components
 
         void Start()
         {
+            InitInfo();
+
+        }
+
+        public void InitInfo()
+        {
             //Debug.Log(cardInfo.cardType);
             //Debug.Log(_cardInfo.elementalType);
 
@@ -58,7 +64,6 @@ namespace Game.Components
                 _elementalType.text = "Type: " + _cardInfo.elementalType.ToString();
                 //_hability.text = _cardInfo.habilityDesciption;
             }
-
         }
 
     }

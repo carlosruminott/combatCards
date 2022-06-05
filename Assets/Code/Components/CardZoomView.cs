@@ -7,6 +7,8 @@ namespace Game.Components
 {
     public class CardZoomView : MonoBehaviour
     {
+        //[SerializeField] private GameObject _card;
+
         GameObject _childCard;
         Card _cardScript;
 
@@ -21,9 +23,10 @@ namespace Game.Components
 
         private void ShowCard(BaseCard info)
         {
+            //Debug.Log(info.cardName);
             _childCard.SetActive(true);
-            Debug.Log(info.cardName);
-            _cardScript.CardInfo.cardName = info.cardName;
+            _cardScript.CardInfo = info;
+            _cardScript.InitInfo();
         }
 
         private void RemoveCard()

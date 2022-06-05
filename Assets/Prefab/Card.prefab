@@ -698,7 +698,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3243683399188677078}
   - component: {fileID: 2458508800859397211}
-  - component: {fileID: 7926764515077176214}
   - component: {fileID: 1586836841621433289}
   m_Layer: 0
   m_Name: Card
@@ -706,7 +705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3243683399188677078
 RectTransform:
   m_ObjectHideFlags: 0
@@ -754,18 +753,6 @@ MonoBehaviour:
   _elementalType: {fileID: 6522828396064890496}
   _hability: {fileID: 0}
   _characterFields: {fileID: 2923871640872028812}
---- !u!114 &7926764515077176214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2458508800859397210}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3945ef7302cf0f4096322fbf3c19a68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1586836841621433289
 BoxCollider2D:
   m_ObjectHideFlags: 0

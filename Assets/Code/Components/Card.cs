@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using Game.Components.Abilities;
 
@@ -10,8 +11,9 @@ namespace Game.Components
     {
 
         [SerializeField] private BaseCard _cardInfo;
-        [SerializeField] private SpriteRenderer _image;
-        [SerializeField] private TextMeshPro _name, _description, _hp, _defense, _attack, _elementalType, _hability;
+        //[SerializeField] private SpriteRenderer _image;
+        [SerializeField] private Image _image;
+        [SerializeField] private TextMeshProUGUI _name, _description, _hp, _defense, _attack, _elementalType, _hability;
         [SerializeField] private GameObject _characterFields;
 
         private Ability _ability;

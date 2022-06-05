@@ -72,14 +72,14 @@ namespace Game.Components
 
         private void InstantiateCard()
         {
-            float posX = _positionFirstCard;
+            //float posX = _positionFirstCard;
             foreach (var item in _handList)
             {
                 _cardScript.CardInfo = item;
                 var go = (GameObject) Instantiate(_card, transform);
-                go.transform.position = new Vector3(posX, 0, 0);
+                //go.transform.position = new Vector3(posX, 0, 0);
                 go.SetActive(true);
-                posX += _distanceOtherCard;
+                //posX += _distanceOtherCard;
             }
         }
 

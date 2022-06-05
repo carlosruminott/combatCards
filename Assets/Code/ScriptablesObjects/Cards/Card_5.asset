@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: Card_5
   m_EditorClassIdentifier: 
   cardType: 1
-  cardImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  cardImage: {fileID: 21300000, guid: f078f6dcfd1f1d34c9cf73ac4f3e7af5, type: 3}
   cardName: +3 Attack
   desciption: +3 Attack
   healthPoints: 0
   defense: 0
   attack: 3
   elementalType: {fileID: 0}
-  addHealthPoints: 0
-  removeHealthPoints: 0
-  habilityDesciption: 
+  ability: {fileID: 0}
+  abilityDesciption: 

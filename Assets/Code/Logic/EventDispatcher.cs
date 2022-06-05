@@ -10,10 +10,13 @@ namespace Game.Logic
     {
         public static UnityEvent Shuffle = new UnityEvent();
         public static UnityEvent GetHand = new UnityEvent();
+        //public static UnityEvent ZoomIn = new UnityEvent();
+        public static UnityEvent ZoomOut = new UnityEvent();
         public static UnityEvent Ability = new UnityEvent();
 
         // para pasar funcion con parametros
         public static WhitParamEvent Discard = new WhitParamEvent();
+        public static WhitParamEvent ZoomIn = new WhitParamEvent();
     }
     public class WhitParamEvent: UnityEvent<BaseCard> { }
 }

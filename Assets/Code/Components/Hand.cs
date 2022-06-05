@@ -17,8 +17,6 @@ namespace Game.Components
         [Space(10)]
         [Header("Config")]
         [SerializeField] private int _initialNumHandCards = 2;
-        [SerializeField] private float _positionFirstCard = -5f;
-        [SerializeField] private float _distanceOtherCard = 3.5f;
 
         [Space(10)]
         [Header("Dynamic Hand")]
@@ -50,12 +48,6 @@ namespace Game.Components
 
         private void HandList()
         {
-            //for (int i = 0; i <= _initialNumHandCards; i++)
-            //{
-                //_handList.Add(_deckList[0]);
-                //_deckList.Remove(_deckList[0]);
-            //}
-            //Debug.Log("deck count: "+ _deckList.Count);
             var numCards = _deckList.Count - 1;
             if(_initialNumHandCards < numCards)
             {
@@ -72,14 +64,11 @@ namespace Game.Components
 
         private void InstantiateCard()
         {
-            //float posX = _positionFirstCard;
             foreach (var item in _handList)
             {
                 _cardScript.CardInfo = item;
                 var go = (GameObject) Instantiate(_card, transform);
-                //go.transform.position = new Vector3(posX, 0, 0);
                 go.SetActive(true);
-                //posX += _distanceOtherCard;
             }
         }
 

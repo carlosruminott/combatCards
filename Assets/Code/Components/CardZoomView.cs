@@ -27,6 +27,11 @@ namespace Game.Components
             _childCard.SetActive(true);
             _cardScript.CardInfo = info;
             _cardScript.InitInfo();
+            if (_cardScript.CardInfo.cardType.ToString() != "Character")
+            {
+                GameObject stats = _childCard.transform.Find("Stats").gameObject;
+                stats.SetActive(false);
+            }
         }
 
         private void RemoveCard()

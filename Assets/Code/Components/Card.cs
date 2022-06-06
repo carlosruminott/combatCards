@@ -31,6 +31,8 @@ namespace Game.Components
             }
         }
 
+        public GameObject CharacterFields { get; set; }
+
         void Start()
         {
             InitInfo();

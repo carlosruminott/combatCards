@@ -1719,6 +1719,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2527284350128353743}
     m_Modifications:
+    - target: {fileID: 8497916142787673893, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497916142787673894, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497916142787673895, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497916142787673895, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8497916142787673896, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1840,6 +1856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2527284350128353743}
   - component: {fileID: 6735223020059365907}
+  - component: {fileID: 6735223020059365908}
   m_Layer: 0
   m_Name: ZoomCard
   m_TagString: Untagged
@@ -1859,3 +1876,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28063802739e7a4b992b791c2977b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvasGroup: {fileID: 6735223020059365908}
+--- !u!225 &6735223020059365908
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735223020059365906}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

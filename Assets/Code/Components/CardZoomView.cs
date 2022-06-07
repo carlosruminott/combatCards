@@ -21,6 +21,8 @@ namespace Game.Components
             Debug.Assert(_canvasGroup != null, "añadir canvas group al card zoom view");
             _childCard = gameObject.transform.GetChild(0).gameObject;
             _cardScript = _childCard.GetComponent<Card>();
+            _childCard.GetComponent<Button>().interactable = false;
+            _childCard.GetComponent<CardZoomController>().enabled = false;
             _canvasGroup.DOFade(0,0);
             _childCard.transform.DOScale(0.95f, 0);
             _childCard.SetActive(false);

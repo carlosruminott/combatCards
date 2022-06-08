@@ -28,6 +28,7 @@ namespace Game.Components
             _childCard.SetActive(false);
             EventDispatcher.ZoomIn.AddListener(ShowCard);
             EventDispatcher.ZoomOut.AddListener(RemoveCard);
+            EventDispatcher.Discard.AddListener(HideCard);
         }
 
         private void ShowCard(BaseCard info)
@@ -54,6 +55,11 @@ namespace Game.Components
             {
                 _childCard.SetActive(false);
             });
+        }
+
+        private void HideCard(BaseCard dummyParam)
+        {
+            RemoveCard();
         }
     }
 }

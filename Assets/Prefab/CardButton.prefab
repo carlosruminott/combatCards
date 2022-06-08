@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 8497916142787673895}
   - component: {fileID: -1451046239098660693}
   - component: {fileID: 4830539599783612388}
+  - component: {fileID: -930299777460391016}
   m_Layer: 0
   m_Name: CardButton
   m_TagString: Untagged
@@ -512,7 +513,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8497916142787673894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -930299777460391016}
+        m_TargetAssemblyTypeName: Game.Components.CardController, Assembly-CSharp
+        m_MethodName: PlayCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1451046239098660693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +558,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b230ad9834ea2df4ca77522e161f0986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-930299777460391016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497916142787673897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db715883f8d366b4ca1bf418f1649665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8497916142823795355

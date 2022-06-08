@@ -68,5 +68,22 @@ namespace Game.Components
             }
         }
 
+        /*public void PlayCard()
+        {
+            switch (_cardInfo.cardType)
+            {
+                case BaseCard.CardType.Character:
+                    break;
+                case BaseCard.CardType.Item:
+                    break;
+                case BaseCard.CardType.AttachableItem:
+                    break;
+                case BaseCard.CardType.Field:
+                    break;
+                default:
+                    break;
+            }
+        }*/
+
     }
 }

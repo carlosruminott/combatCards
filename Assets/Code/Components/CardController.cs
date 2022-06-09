@@ -15,23 +15,30 @@ namespace Game.Components
             _cardScript = GetComponent<Card>();
         }
 
+
         public void PlayCard()
         {
-            Discard();
-            //switch (_cardScript.CardInfo.cardType)
-            //{
-            //    case BaseCard.CardType.Character:
-            //        break;
-            //    case BaseCard.CardType.Item:
-            //        Discard();
-            //        break;
-            //    case BaseCard.CardType.AttachableItem:
-            //        break;
-            //    case BaseCard.CardType.Field:
-            //        break;
-            //    default:
-            //        break;
-            //}
+            switch (_cardScript.CardInfo.cardType)
+            {
+                case BaseCard.CardType.Character:
+                    if (CardHasHability()) PlayAbility();
+                    PlaceOnField();
+                    break;
+                case BaseCard.CardType.Item:
+                    PlayAbility();
+                    Discard();
+                    break;
+                case BaseCard.CardType.AttachableItem:
+                    PlayAbility();
+                    AttachOnItem();
+                    break;
+                case BaseCard.CardType.Field:
+                    PlayAbility();
+                    PlaceOnField();
+                    break;
+                default:
+                    break;
+            }
 
         }
 
@@ -49,6 +56,16 @@ namespace Game.Components
         {
             Ability ability = _cardScript.CardInfo.ability.GetComponent<Ability>();
             ability.OnActivate();
+        }
+
+        private void PlaceOnField()
+        {
+
+        }
+
+        private void AttachOnItem()
+        {
+
         }
     }
 }

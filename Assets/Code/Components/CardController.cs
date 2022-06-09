@@ -25,15 +25,15 @@ namespace Game.Components
                     PlaceOnField();
                     break;
                 case BaseCard.CardType.Item:
-                    PlayAbility();
+                    if (CardHasHability()) PlayAbility();
                     Discard();
                     break;
                 case BaseCard.CardType.AttachableItem:
-                    PlayAbility();
+                    if (CardHasHability()) PlayAbility();
                     AttachOnItem();
                     break;
                 case BaseCard.CardType.Field:
-                    PlayAbility();
+                    if (CardHasHability()) PlayAbility();
                     PlaceOnField();
                     break;
                 default:

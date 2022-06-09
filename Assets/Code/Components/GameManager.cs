@@ -19,7 +19,7 @@ namespace Game.Components
 
         public void Awake()
         {
-            Debug.Assert(_game != null, "World is not assigned in GameDirector");
+            Debug.Assert(_game != null, "Game is not assigned in GameDirector");
             Debug.Assert(_ui != null, "UI is not assigned in GameDirector");
         }
 

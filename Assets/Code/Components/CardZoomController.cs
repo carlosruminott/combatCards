@@ -15,14 +15,14 @@ namespace Game.Components
             //Debug.Log("overr");
             Card _cardScript = GetComponent<Card>();
             EventDispatcher.ZoomIn?.Invoke(_cardScript.CardInfo);
-            transform.DOMoveY(180, 0.3f);
+            transform.DOMoveY(140, 0.3f);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             //Debug.Log("exit");
             EventDispatcher.ZoomOut?.Invoke();
-            transform.DOMoveY(150, 0.3f);
+            transform.DOMoveY(110, 0.3f);
         }
     }
 }

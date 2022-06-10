@@ -68,6 +68,7 @@ namespace Game.Components
             {
                 _cardScript.CardInfo = item;
                 var go = (GameObject) Instantiate(_card, transform);
+                go.transform.localScale = new Vector3(0.75f,0.75f,1);
                 go.SetActive(true);
             }
         }

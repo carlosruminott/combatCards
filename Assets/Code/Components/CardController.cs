@@ -61,7 +61,7 @@ namespace Game.Components
         private void PlaceOnField()
         {
             // enviar evento a tile con _cardScript.CardInfo
-            EventDispatcher.SpawnOnTile?.Invoke(_cardScript.CardInfo);
+            EventDispatcher.SendInfoCard?.Invoke(_cardScript.CardInfo);
         }
 
         private void AttachOnItem()

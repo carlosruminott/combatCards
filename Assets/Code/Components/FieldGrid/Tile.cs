@@ -43,6 +43,7 @@ namespace Game.Components.Grid
 
         public void SpawnTileCard()
         {
+            if (_isTileActive) return;
             _isTileActive = true;
             Instantiate(_tileCard, _tileCardButton.transform);
             _tileCardButtonText.SetActive(false);

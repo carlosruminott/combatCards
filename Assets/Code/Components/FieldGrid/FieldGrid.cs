@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Components
+namespace Game.Components.Grid
 {
     public class FieldGrid : MonoBehaviour
     {
@@ -19,8 +19,7 @@ namespace Game.Components
             for (int i = 0; i < _tileNumber; i++)
             {
                 var spawnedTile = Instantiate(_tile, transform);
-                spawnedTile.name = $"Tile {i}";
-                //spawnedTile.transform.GetChild(0).
+                spawnedTile.name = $"{i}";
             }
         }
     }

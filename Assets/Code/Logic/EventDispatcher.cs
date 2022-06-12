@@ -17,6 +17,7 @@ namespace Game.Logic
         // para pasar funcion con parametros
         public static WhitParamEvent Discard = new WhitParamEvent();
         public static WhitParamEvent ZoomIn = new WhitParamEvent();
+        public static WhitParamEvent SpawnOnTile = new WhitParamEvent();
     }
     public class WhitParamEvent: UnityEvent<BaseCard> { }
 }

@@ -33,6 +33,7 @@ namespace Game.Components
             _cardScript = _card.GetComponent<Card>();
             EventDispatcher.GetHand.AddListener(DeckList);
             EventDispatcher.Discard.AddListener(RemoveSelectedCard);
+            EventDispatcher.DiscardFromHand.AddListener(RemoveSelectedCard);
         }
 
         public void DeckList()

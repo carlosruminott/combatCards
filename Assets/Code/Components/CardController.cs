@@ -23,6 +23,7 @@ namespace Game.Components
                 case BaseCard.CardType.Character:
                     if (CardHasHability()) PlayAbility();
                     PlaceOnField();
+                    RemoveFromHand();
                     break;
                 case BaseCard.CardType.Item:
                     if (CardHasHability()) PlayAbility();
@@ -31,10 +32,12 @@ namespace Game.Components
                 case BaseCard.CardType.AttachableItem:
                     if (CardHasHability()) PlayAbility();
                     AttachOnItem();
+                    RemoveFromHand();
                     break;
                 case BaseCard.CardType.Field:
                     if (CardHasHability()) PlayAbility();
                     PlaceOnField();
+                    RemoveFromHand();
                     break;
                 default:
                     break;
@@ -45,6 +48,11 @@ namespace Game.Components
         private void Discard()
         {
             EventDispatcher.Discard?.Invoke(_cardScript.CardInfo);
+        }
+
+        private void RemoveFromHand()
+        {
+            EventDispatcher.DiscardFromHand?.Invoke(_cardScript.CardInfo);
         }
 
         private bool CardHasHability()
@@ -60,7 +68,6 @@ namespace Game.Components
 
         private void PlaceOnField()
         {
-            // enviar evento a tile con _cardScript.CardInfo
             EventDispatcher.SendInfoCard?.Invoke(_cardScript.CardInfo);
         }
 

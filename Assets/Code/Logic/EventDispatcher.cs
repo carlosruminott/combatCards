@@ -16,6 +16,7 @@ namespace Game.Logic
         public static UnityEvent TileSapwned = new UnityEvent();
 
         // para pasar funcion con parametros
+        public static WhitParamEvent DiscardFromHand = new WhitParamEvent();
         public static WhitParamEvent Discard = new WhitParamEvent();
         public static WhitParamEvent ZoomIn = new WhitParamEvent();
         public static WhitParamEvent SendInfoCard = new WhitParamEvent();

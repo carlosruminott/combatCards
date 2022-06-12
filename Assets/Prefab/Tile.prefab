@@ -229,6 +229,7 @@ MonoBehaviour:
   _numberTile: {fileID: 3533022860074099656}
   _tileCard: {fileID: 2271142314681610319, guid: 4291f0cc6211bf14a96b20888bd030b3, type: 3}
   _tileCardButton: {fileID: 5474389156835735334}
+  _tileCardButtonText: {fileID: 7745240815707132218}
   _isTileActive: 0
 --- !u!1 &5474389156835735334
 GameObject:

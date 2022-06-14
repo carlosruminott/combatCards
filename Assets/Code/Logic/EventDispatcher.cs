@@ -13,6 +13,7 @@ namespace Game.Logic
         //public static UnityEvent ZoomIn = new UnityEvent();
         public static UnityEvent ZoomOut = new UnityEvent();
         public static UnityEvent Ability = new UnityEvent();
+        public static UnityEvent PlayCardToField = new UnityEvent();
         public static UnityEvent TileSapwned = new UnityEvent();
 
         // para pasar funcion con parametros

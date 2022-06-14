@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab33f508e8c8d342bf3cd1f1627912f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardInfo: {fileID: 11400000, guid: 596ba3349cbc99f49af8c6b1eec53272, type: 2}
+  _cardInfo: {fileID: 11400000, guid: 9702e4b4796880c449596b58bef8ecc3, type: 2}
   _image: {fileID: 8497916142444647378}
   _name: {fileID: 8497916142884419347}
   _description: {fileID: 8497916141836328745}

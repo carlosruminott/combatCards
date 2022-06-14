@@ -48,6 +48,7 @@ namespace Game.Components.Grid
             Instantiate(_tileCard, _tileCardButton.transform);
             _tileCardButtonText.SetActive(false);
             EventDispatcher.TileSapwned?.Invoke();
+            EventDispatcher.ZoomOut?.Invoke();
         }
     }
 }

@@ -69,6 +69,7 @@ namespace Game.Components
         private void PlaceOnField()
         {
             EventDispatcher.SendInfoCard?.Invoke(_cardScript.CardInfo);
+            EventDispatcher.PlayCardToField?.Invoke();
         }
 
         private void AttachOnItem()

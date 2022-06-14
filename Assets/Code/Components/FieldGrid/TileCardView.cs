@@ -7,9 +7,10 @@ namespace Game.Components.Grid
 {
     public class TileCardView : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _tileCardName;
-
         public string tileCardName;
+        public BaseCard cardInfo;
+
+        [SerializeField] private TextMeshProUGUI _tileCardName;
 
         private void Start()
         {

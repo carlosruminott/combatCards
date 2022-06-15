@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Game.Components
 {
-    public class ElementTypeList : MonoBehaviour
+    public class FactionList : MonoBehaviour
     {
-        public List<Element> elementTypeList;
-        public static ElementTypeList instance;
+        public List<Faction> elementTypeList;
+        public static FactionList instance;
      
         void Awake()
         {

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f2796813de65494d97b7555ac69f351, type: 3}
-  m_Name: Fire
+  m_Name: Machine
   m_EditorClassIdentifier: 
-  elementName: Fire
-  elementWeakness: {fileID: 11400000, guid: 84535cef315f33b49a90c59446cc5dc7, type: 2}
-  ElementResistance: {fileID: 0}
+  factionName: 
+  factionWeakness: {fileID: 0}
+  factionResistance: {fileID: 0}

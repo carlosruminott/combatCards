@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soDeckList: {fileID: 11400000, guid: afef5c3d3e78f374983aba0c2a4b97cc, type: 2}
   _card: {fileID: 8497916142787673897, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}
-  _initialNumHandCards: 2
+  _initialNumHandCards: 3
   _handList: []
   _deckList: []
 --- !u!1 &519420028

@@ -8,7 +8,6 @@ namespace Game.Components
     public class Deck : MonoBehaviour
     {
         [Header("Scriptable Card List")]
-        [SerializeField] private List<BaseCard> _cardList;
         [SerializeField] private DeckList _deckList;
 
         [Header("Dynamic Deck")]
@@ -28,9 +27,12 @@ namespace Game.Components
         private void PopulateDeck()
         {
             _deckList.cardList.Clear();
-            foreach (var card in _cardList)
+            foreach (var card in _deckList.deck)
             {
-                _deckList.cardList.Add(card);
+                for (int i=0; i < card.count; i++)
+                {
+                    _deckList.cardList.Add(card.cardData);
+                }
             }
         }
 

@@ -13,12 +13,12 @@ namespace Game
 
         //public Dictionary<BaseCard, Image>
 
-        public List<Cards> cards;
+        public List<Deck> deck;
 
         [System.Serializable]
-        public struct Cards
+        public struct Deck
         {
-            public BaseCard card;
+            public BaseCard cardData;
             [Min(0)] public int count;
         }
 

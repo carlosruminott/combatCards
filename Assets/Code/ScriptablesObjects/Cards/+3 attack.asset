@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a218e078245d1c4aa89b3d9bd66369c, type: 3}
-  m_Name: Card_4
+  m_Name: +3 attack
   m_EditorClassIdentifier: 
-  cardType: 0
-  cardImage: {fileID: 21300000, guid: c6dd81131e5ce004d8b610037e0c5f2d, type: 3}
-  cardName: Super Atacante
-  desciption: Second card enemy
-  healthPoints: 10
+  cardType: 1
+  cardImage: {fileID: 21300000, guid: f078f6dcfd1f1d34c9cf73ac4f3e7af5, type: 3}
+  cardName: +3 Attack
+  desciption: +3 Attack
+  healthPoints: 0
   defense: 0
-  attack: 5
-  elementalType: {fileID: 11400000, guid: 84535cef315f33b49a90c59446cc5dc7, type: 2}
+  attack: 3
+  elementalType: {fileID: 0}
   ability: {fileID: 0}
   abilityDesciption: 

@@ -14,10 +14,14 @@ namespace Game.Components.Grid
         [SerializeField] private GameObject _tileCardButtonText;
         [SerializeField] private bool _isTileActive = false;
 
+        // private int _tilePosition;
+
         public bool isTileActive 
         { 
             get { return _isTileActive; } 
         }
+
+        // public int tilePosition { get { return _tilePosition; } }
 
         private TileCardView _tileCardScript;
 

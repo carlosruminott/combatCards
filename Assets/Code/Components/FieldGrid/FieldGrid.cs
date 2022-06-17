@@ -14,6 +14,10 @@ namespace Game.Components.Grid
         private int _firstTileFile = 30;
         private int _lastTileFile = 35;
 
+        public List<GameObject> tileList {
+            get { return _tiles; }
+        }
+
         private void Awake()
         {
             Debug.Assert(_tile != null, "missing tile prefab on [" + gameObject.name + "]");

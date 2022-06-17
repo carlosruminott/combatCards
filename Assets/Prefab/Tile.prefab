@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 4084791008640095969}
   - component: {fileID: 4084791008640095968}
   - component: {fileID: -1919795888896505306}
+  - component: {fileID: -8673748477114093587}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -231,6 +232,18 @@ MonoBehaviour:
   _tileCardButton: {fileID: 5474389156835735334}
   _tileCardButtonText: {fileID: 7745240815707132218}
   _isTileActive: 0
+--- !u!114 &-8673748477114093587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084791008640095974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855ae10dbf2490e4aa03324430fc885e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5474389156835735334
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +379,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -8673748477114093587}
+        m_TargetAssemblyTypeName: Game.Components.Grid.TileController, Components
+        m_MethodName: ShowPathToMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2691576941908322402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081cd9150af7d3d4b94d6f0695d74e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisabled: 0
 --- !u!1 &7745240815707132218
 GameObject:
   m_ObjectHideFlags: 0

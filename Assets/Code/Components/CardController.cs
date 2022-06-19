@@ -8,11 +8,13 @@ namespace Game.Components
 {
     public class CardController : MonoBehaviour
     {
+        private int _countActiveTiles;
         Card _cardScript;
 
         private void Awake()
         {
             _cardScript = GetComponent<Card>();
+            EventDispatcher.GetCountActiveTilesInField.AddListener(GetCountActiveTiles);
         }
 
 
@@ -21,9 +23,14 @@ namespace Game.Components
             switch (_cardScript.CardInfo.cardType)
             {
                 case BaseCard.CardType.Character:
-                    if (CardHasHability()) PlayAbility();
-                    PlaceOnField();
-                    RemoveFromHand();
+                    if(_countActiveTiles == 6) {
+                        Debug.Log("ya no se puede jugar cartas al campo");
+                        return;
+                    }else {
+                        if (CardHasHability()) PlayAbility();
+                        PlaceOnField();
+                        RemoveFromHand();
+                    }
                     break;
                 case BaseCard.CardType.Item:
                     if (CardHasHability()) PlayAbility();
@@ -75,6 +82,12 @@ namespace Game.Components
         private void AttachOnItem()
         {
 
+        }
+
+        private void GetCountActiveTiles(int count)
+        {
+            //Debug.Log("count: " + count);
+            _countActiveTiles = count;
         }
     }
 }

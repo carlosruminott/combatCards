@@ -14,9 +14,10 @@ namespace Game.Components.Grid
         private int _firstTileFile = 30;
         private int _lastTileFile = 35;
 
-        public List<GameObject> tileList {
-            get { return _tiles; }
-        }
+        private int _countActiveTiles;
+
+        public List<GameObject> tileList {get { return _tiles; }}
+        public int countActiveTiles {get { return _countActiveTiles; }}
 
         private void Awake()
         {
@@ -49,13 +50,17 @@ namespace Game.Components.Grid
 
         private void DeactiveTilesButtons()
         {
+            _countActiveTiles = 0;
             foreach (var tile in _tiles)
             {
                 if (tile.GetComponent<Tile>().isTileActive == false )
                 {
                     tile.transform.Find("TileButton").gameObject.SetActive(false);
+                }else {
+                    _countActiveTiles++;
                 }
             }
+            EventDispatcher.GetCountActiveTilesInField?.Invoke(_countActiveTiles);
         }
 
         private void ActiveTileButton(int tilePosition)

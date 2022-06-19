@@ -23,6 +23,7 @@ namespace Game.Components.Grid
             Debug.Assert(_tile != null, "missing tile prefab on [" + gameObject.name + "]");
             EventDispatcher.SendInfoCard.AddListener(ActiveTilesToSpawnCard);
             EventDispatcher.TileSapwned.AddListener(DeactiveTilesButtons);
+            EventDispatcher.SendInt.AddListener(ActiveTileButton);
         }
 
         private void Start()
@@ -39,7 +40,10 @@ namespace Game.Components.Grid
         {
             for (int i = _firstTileFile; i <= _lastTileFile; i++)
             {
-                _tiles[i].transform.Find("TileButton").gameObject.SetActive(true);
+                if(_tiles[i].GetComponent<Tile>().isTileActive == false)
+                {
+                    _tiles[i].transform.Find("TileButton").gameObject.SetActive(true);
+                }
             }
         }
 
@@ -47,11 +51,17 @@ namespace Game.Components.Grid
         {
             foreach (var tile in _tiles)
             {
-                if (!tile.GetComponent<Tile>().isTileActive)
+                if (tile.GetComponent<Tile>().isTileActive == false )
                 {
                     tile.transform.Find("TileButton").gameObject.SetActive(false);
                 }
             }
+        }
+
+        private void ActiveTileButton(int tilePosition)
+        {
+            //if (tilePosition < _firstTileFile || tilePosition > _lastTileFile) return;
+            _tiles[tilePosition].transform.Find("TileButton").gameObject.SetActive(true);
         }
     }
 }

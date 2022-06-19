@@ -21,6 +21,8 @@ namespace Game.Logic
         public static WhitParamEvent Discard = new WhitParamEvent();
         public static WhitParamEvent ZoomIn = new WhitParamEvent();
         public static WhitParamEvent SendInfoCard = new WhitParamEvent();
+        public static ParamInt SendInt = new ParamInt();
     }
     public class WhitParamEvent: UnityEvent<BaseCard> { }
+    public class ParamInt: UnityEvent<int> { }
 }

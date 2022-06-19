@@ -367,9 +367,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -1919795888896505306}
-        m_TargetAssemblyTypeName: Game.Components.Grid.Tile, Assembly-CSharp
-        m_MethodName: SpawnTileCard
+      - m_Target: {fileID: -8673748477114093587}
+        m_TargetAssemblyTypeName: Game.Components.Grid.TileController, Components
+        m_MethodName: ShowOrHidePathToMove
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -381,7 +381,19 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: -8673748477114093587}
         m_TargetAssemblyTypeName: Game.Components.Grid.TileController, Components
-        m_MethodName: ShowPathToMove
+        m_MethodName: HidePastRows
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -1919795888896505306}
+        m_TargetAssemblyTypeName: Game.Components.Grid.Tile, Assembly-CSharp
+        m_MethodName: SpawnTileCard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

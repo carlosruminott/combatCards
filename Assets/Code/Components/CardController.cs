@@ -20,10 +20,27 @@ namespace Game.Components
 
         public void PlayCard()
         {
+            // if(playerTurn)
+            _countActiveTiles = Player.Instance.countActiveTiles;
+            // else if(IAturn)
+            // _countActiveTiles = IA.Instance.countActiveTiles;
+
             switch (_cardScript.CardInfo.cardType)
             {
                 case BaseCard.CardType.Character:
-                    if(_countActiveTiles == 6) {
+                    if(_cardScript.CardInfo.sacrificeCost != 0)
+                    {
+                        if(_countActiveTiles < _cardScript.CardInfo.sacrificeCost) {
+                            Debug.Log("no se puede jugar esta carta al campo");
+                            return;
+                        }
+                        if(_countActiveTiles >= _cardScript.CardInfo.sacrificeCost){
+                            Debug.Log("se puede jugar esta carta al campo");
+                            EventDispatcher.PlayCardToField?.Invoke();
+                            EventDispatcher.PlayCardToFieldWithSacrifice?.Invoke();
+                            // coroutina para seleccionar tiles y quitarlos del campo
+                        }
+                    }else if(_countActiveTiles == 6) {
                         Debug.Log("ya no se puede jugar cartas al campo");
                         return;
                     }else {
@@ -87,7 +104,8 @@ namespace Game.Components
         private void GetCountActiveTiles(int count)
         {
             //Debug.Log("count: " + count);
-            _countActiveTiles = count;
+            //_countActiveTiles = count;
+            Player.Instance.countActiveTiles = count;
         }
     }
 }

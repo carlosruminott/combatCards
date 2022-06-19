@@ -11,18 +11,28 @@ namespace Game.Components.Grid
         private FieldGrid _gridScript;
         private int _tilePosition;
         private int _tilesRowNum = 6;
+        private bool _isTimeToMove = true;
         private List<int> _movePosibilities = new List<int>();
         private List<int> _hidePosibilities = new List<int>();
         private List<int> _tileShowPath = new List<int>();
+
+        private void Awake() {
+            EventDispatcher.PlayCardToFieldWithSacrifice.AddListener(DontMove);
+        }
 
         private void Start() {
             _tilePosition = int.Parse(gameObject.name);
             _tileScript = GetComponent<Tile>();
             _gridScript = GetComponentInParent<FieldGrid>();
-        }        
+        } 
+
+        private void DontMove() {
+            _isTimeToMove = false;
+        }       
 
         public void ShowOrHidePathToMove() {
             if(_tileScript.isTileActive == false) return;
+            if(_isTimeToMove == false) return;
             EventDispatcher.TileSapwned?.Invoke(); // deactivated tile buttons
             int blockPosibility = _tilePosition - _tilesRowNum;
             if(_tileShowPath.Contains(_tilePosition) == false) {

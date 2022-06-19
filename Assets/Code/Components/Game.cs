@@ -6,6 +6,8 @@ namespace Game.Components
 {
     public class Game : MonoBehaviour
     {
-        
+        public static Game Instance;
+
+        private void Awake() => Instance = this; 
     }
 }

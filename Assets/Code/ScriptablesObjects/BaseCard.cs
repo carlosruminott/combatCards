@@ -39,6 +39,8 @@ public class BaseCard : ScriptableObject
     [Space(20)]
     [Header("Costs")]
     [Min(0)] public int energyCost = 0;
+    [Tooltip("Sacrifice of necessary field players, to be able to play this card to the field")]
+    [Min(0)] public int sacrificeCost = 0;
     [Range(0,10)] public int lifeValue = 0;
 
     [Space(20)]

@@ -18,8 +18,9 @@ MonoBehaviour:
   rarity: 0
   cardName: Hero
   desciption: First Card of the game
-  energyCost: 0
-  lifeValue: 0
+  energyCost: 1
+  sacrificeCost: 0
+  lifeValue: 1
   healthPoints: 20
   defense: 4
   attack: 2

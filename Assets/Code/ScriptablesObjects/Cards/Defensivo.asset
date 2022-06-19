@@ -12,13 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a218e078245d1c4aa89b3d9bd66369c, type: 3}
   m_Name: Defensivo
   m_EditorClassIdentifier: 
-  cardType: 0
   cardImage: {fileID: 21300000, guid: 61095cfde71f40246b49befb393410ca, type: 3}
+  cardType: 0
+  level: 1
+  rarity: 0
   cardName: Defensivo
   desciption: Second card enemy
+  energyCost: 1
+  sacrificeCost: 0
+  lifeValue: 1
   healthPoints: 10
   defense: 10
   attack: 1
   elementalType: {fileID: 11400000, guid: f73041cf3920b6846a3ab3f006eb3b19, type: 2}
+  condition: 0
+  itCanBeMoved: 1
+  advanceBlocks: 1
   ability: {fileID: 0}
   abilityDesciption: 

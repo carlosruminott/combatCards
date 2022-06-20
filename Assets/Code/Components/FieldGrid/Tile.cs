@@ -17,7 +17,7 @@ namespace Game.Components.Grid
         // private int _tilePosition;
 
         public bool isSelected = false;
-        public bool isTileActive { get { return _isTileActive; } }
+        public bool isTileActive { get { return _isTileActive; } set { _isTileActive = value; } }
 
         // public int tilePosition { get { return _tilePosition; } }
 

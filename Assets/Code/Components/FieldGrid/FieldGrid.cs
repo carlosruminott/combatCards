@@ -74,12 +74,19 @@ namespace Game.Components.Grid
         {
             foreach (var tile in _tiles)
             {
-                Debug.Log("Tile selected: "+tile.GetComponent<Tile>().isSelected);
-                if (tile.GetComponent<Tile>().isSelected == true)
+                //Debug.Log("Tile selected: "+tile.GetComponent<Tile>().isSelected);
+                var tileScript = tile.GetComponent<Tile>();
+                if (tileScript.isSelected == true)
                 {
                     var tileButton = tile.transform.Find("TileButton").gameObject;
-                    var cardInfo = tileButton.transform.GetChild(1).GetComponent<TileCardView>().cardInfo;
+                    var childOfButtonText = tileButton.transform.GetChild(0).gameObject;
+                    var childOfButton = tileButton.transform.GetChild(1);
+                    var cardInfo = childOfButton.GetComponent<TileCardView>().cardInfo;
+                    childOfButtonText.SetActive(true);
                     tileButton.SetActive(false);
+                    tileScript.isTileActive = false;
+                    tileScript.isSelected = false;
+                    Destroy(childOfButton.gameObject);
                     EventDispatcher.Discard?.Invoke(cardInfo);
                 }
             }

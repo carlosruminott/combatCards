@@ -42,7 +42,6 @@ namespace Game.Components
                             Debug.Log("se puede jugar esta carta al campo");
                             EventDispatcher.PlayCardToField?.Invoke();
                             EventDispatcher.PlayCardToFieldWithSacrifice?.Invoke();
-                            // coroutina para seleccionar tiles y quitarlos del campo
                             StartCoroutine(CountSelectedTiles());
                         }
                     }else if(_countActiveTiles == 6) {
@@ -114,6 +113,8 @@ namespace Game.Components
             yield return new WaitUntil(() => _countSelectedTiles == _cardScript.CardInfo.sacrificeCost);
             //Debug.Log("coroutine end, discard tiles");
             EventDispatcher.DiscardTile?.Invoke();
+            PlaceOnField();
+            RemoveFromHand();
         }
     }
 }

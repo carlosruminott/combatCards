@@ -16,6 +16,7 @@ namespace Game.Logic
         public static UnityEvent PlayCardToField = new UnityEvent();
         public static UnityEvent PlayCardToFieldWithSacrifice = new UnityEvent();
         public static UnityEvent TileSapwned = new UnityEvent();
+        public static UnityEvent DiscardTile = new UnityEvent();
 
         // para pasar funcion con parametros
         public static WhitParamEvent DiscardFromHand = new WhitParamEvent();

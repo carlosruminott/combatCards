@@ -232,6 +232,7 @@ MonoBehaviour:
   _tileCardButton: {fileID: 5474389156835735334}
   _tileCardButtonText: {fileID: 7745240815707132218}
   _isTileActive: 0
+  isSelected: 0
 --- !u!114 &-8673748477114093587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +383,18 @@ MonoBehaviour:
       - m_Target: {fileID: -8673748477114093587}
         m_TargetAssemblyTypeName: Game.Components.Grid.TileController, Components
         m_MethodName: HidePastRows
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -8673748477114093587}
+        m_TargetAssemblyTypeName: Game.Components.Grid.TileController, Components
+        m_MethodName: TimeToSelectTiles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

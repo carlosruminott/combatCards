@@ -28,6 +28,13 @@ namespace Game.Components.Grid
 
         private void DontMove() {
             _isTimeToMove = false;
+        }
+
+        public void TimeToSelectTiles() {
+            if(_isTimeToMove) return;
+            if(_tileScript.isSelected) return;
+            _tileScript.isSelected = true;
+            Player.Instance.countSelectedTiles++;
         }       
 
         public void ShowOrHidePathToMove() {

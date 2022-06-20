@@ -9,6 +9,7 @@ namespace Game.Components
     public class CardController : MonoBehaviour
     {
         private int _countActiveTiles;
+        private int _countSelectedTiles;
         Card _cardScript;
 
         private void Awake()
@@ -17,6 +18,9 @@ namespace Game.Components
             EventDispatcher.GetCountActiveTilesInField.AddListener(GetCountActiveTiles);
         }
 
+        private void Update() {
+            _countSelectedTiles = Player.Instance.countSelectedTiles;
+        }
 
         public void PlayCard()
         {
@@ -39,6 +43,7 @@ namespace Game.Components
                             EventDispatcher.PlayCardToField?.Invoke();
                             EventDispatcher.PlayCardToFieldWithSacrifice?.Invoke();
                             // coroutina para seleccionar tiles y quitarlos del campo
+                            StartCoroutine(CountSelectedTiles());
                         }
                     }else if(_countActiveTiles == 6) {
                         Debug.Log("ya no se puede jugar cartas al campo");
@@ -69,10 +74,7 @@ namespace Game.Components
 
         }
 
-        private void Discard()
-        {
-            EventDispatcher.Discard?.Invoke(_cardScript.CardInfo);
-        }
+        private void Discard() => EventDispatcher.Discard?.Invoke(_cardScript.CardInfo);
 
         private void RemoveFromHand()
         {
@@ -96,16 +98,22 @@ namespace Game.Components
             EventDispatcher.PlayCardToField?.Invoke();
         }
 
-        private void AttachOnItem()
-        {
-
-        }
+        private void AttachOnItem(){}
 
         private void GetCountActiveTiles(int count)
         {
             //Debug.Log("count: " + count);
             //_countActiveTiles = count;
             Player.Instance.countActiveTiles = count;
+        }
+
+        IEnumerator CountSelectedTiles()
+        {
+            //_countSelectedTiles = Player.Instance.countSelectedTiles;
+            //Debug.Log("coroutine countSelectedTiles: " + _countSelectedTiles);
+            yield return new WaitUntil(() => _countSelectedTiles == _cardScript.CardInfo.sacrificeCost);
+            //Debug.Log("coroutine end, discard tiles");
+            EventDispatcher.DiscardTile?.Invoke();
         }
     }
 }

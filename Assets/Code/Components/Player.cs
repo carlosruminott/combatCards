@@ -8,6 +8,7 @@ namespace Game.Components
     {
         public static Player Instance;
         public int countActiveTiles = 0;
+        public int countSelectedTiles = 0;
 
         private void Awake() => Instance = this;
     }

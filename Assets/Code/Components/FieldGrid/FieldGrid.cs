@@ -25,6 +25,7 @@ namespace Game.Components.Grid
             EventDispatcher.SendInfoCard.AddListener(ActiveTilesToSpawnCard);
             EventDispatcher.TileSapwned.AddListener(DeactiveTilesButtons);
             EventDispatcher.SendInt.AddListener(ActiveTileButton);
+            EventDispatcher.DiscardTile.AddListener(DiscardTiles);
         }
 
         private void Start()
@@ -67,6 +68,21 @@ namespace Game.Components.Grid
         {
             //if (tilePosition < _firstTileFile || tilePosition > _lastTileFile) return;
             _tiles[tilePosition].transform.Find("TileButton").gameObject.SetActive(true);
+        }
+
+        private void DiscardTiles()
+        {
+            foreach (var tile in _tiles)
+            {
+                Debug.Log("Tile selected: "+tile.GetComponent<Tile>().isSelected);
+                if (tile.GetComponent<Tile>().isSelected == true)
+                {
+                    var tileButton = tile.transform.Find("TileButton").gameObject;
+                    var cardInfo = tileButton.transform.GetChild(1).GetComponent<TileCardView>().cardInfo;
+                    tileButton.SetActive(false);
+                    EventDispatcher.Discard?.Invoke(cardInfo);
+                }
+            }
         }
     }
 }

@@ -115,6 +115,7 @@ namespace Game.Components
             EventDispatcher.DiscardTile?.Invoke();
             PlaceOnField();
             RemoveFromHand();
+            Player.Instance.countSelectedTiles = 0;
         }
     }
 }

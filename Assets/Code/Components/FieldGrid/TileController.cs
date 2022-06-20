@@ -17,6 +17,7 @@ namespace Game.Components.Grid
         private List<int> _tileShowPath = new List<int>();
 
         private void Awake() {
+            EventDispatcher.PlayCardToField.AddListener(canMove);
             EventDispatcher.PlayCardToFieldWithSacrifice.AddListener(DontMove);
         }
 
@@ -25,6 +26,10 @@ namespace Game.Components.Grid
             _tileScript = GetComponent<Tile>();
             _gridScript = GetComponentInParent<FieldGrid>();
         } 
+
+        private void canMove() {
+            _isTimeToMove = true;
+        }
 
         private void DontMove() {
             _isTimeToMove = false;

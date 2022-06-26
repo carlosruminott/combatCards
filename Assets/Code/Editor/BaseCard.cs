@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.Events;
 
-namespace Game {
+namespace Game.Editor {
     [CreateAssetMenu(fileName = "Card", menuName = "Game Data/New Card", order = 2)]
     public class BaseCard : ScriptableObject
     {

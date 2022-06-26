@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d2cfd8a462aa14986301438dbfbc69, type: 3}
+  m_Name: Elfo del bosque
+  m_EditorClassIdentifier: 
+  cardImage: {fileID: 0}
+  cardType: 0
+  level: 1
+  rarity: 0
+  cardName: Elfo del bosque
+  desciption: "Gasta 1 punto de energ\xEDa o descarta una carta de tu mazo para curar
+    2 jugadores del campo"
+  energyCost: 0
+  sacrificeCost: 0
+  lifeValue: 0
+  healthPoints: 0
+  defense: 0
+  attack: 0
+  elementalType: {fileID: 0}
+  condition: 0
+  itCanBeMoved: 1
+  advanceBlocks: 1
+  ability: {fileID: 0}
+  abilityDesciption: 

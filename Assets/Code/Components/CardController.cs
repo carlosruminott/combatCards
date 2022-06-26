@@ -19,13 +19,13 @@ namespace Game.Components
         }
 
         private void Update() {
-            _countSelectedTiles = Player.Instance.countSelectedTiles;
+            _countSelectedTiles = Player.Instance.CountSelectedTiles;
         }
 
         public void PlayCard()
         {
             // if(playerTurn)
-            _countActiveTiles = Player.Instance.countActiveTiles;
+            _countActiveTiles = Player.Instance.CountActiveTiles;
             // else if(IAturn)
             // _countActiveTiles = IA.Instance.countActiveTiles;
 
@@ -103,7 +103,7 @@ namespace Game.Components
         {
             //Debug.Log("count: " + count);
             //_countActiveTiles = count;
-            Player.Instance.countActiveTiles = count;
+            Player.Instance.CountActiveTiles = count;
         }
 
         IEnumerator CountSelectedTiles()
@@ -115,7 +115,7 @@ namespace Game.Components
             EventDispatcher.DiscardTile?.Invoke();
             PlaceOnField();
             RemoveFromHand();
-            Player.Instance.countSelectedTiles = 0;
+            Player.Instance.CountSelectedTiles = 0;
         }
     }
 }

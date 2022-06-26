@@ -4,12 +4,24 @@ using UnityEngine;
 
 namespace Game.Components
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IPlayer
     {
-        public static Player Instance;
-        public int countActiveTiles = 0;
-        public int countSelectedTiles = 0;
+        public static IPlayer Instance {
+            get {
+                if(_instance == null) {
+                    var auxGameObject = new GameObject("Player");
+                    _instance = auxGameObject.AddComponent<Player>();
+                }
+                return _instance;
+            }
+        }
+        private static IPlayer _instance;
+        private int _countActiveTiles = 0;
+        private int _countSelectedTiles = 0;
 
-        private void Awake() => Instance = this;
+        public int CountSelectedTiles { get => _countSelectedTiles; set => _countSelectedTiles = value; }
+        public int CountActiveTiles { get => _countActiveTiles; set => _countActiveTiles = value; }
+
+        //private void Awake() => Instance = Instance ?? (Instance = this);
     }
 }

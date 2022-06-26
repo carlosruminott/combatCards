@@ -39,7 +39,7 @@ namespace Game.Components.Grid
             if(_isTimeToMove) return;
             if(_tileScript.isSelected) return;
             _tileScript.isSelected = true;
-            Player.Instance.countSelectedTiles++;
+            Player.Instance.CountSelectedTiles++;
         }       
 
         public void ShowOrHidePathToMove() {

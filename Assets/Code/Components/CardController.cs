@@ -8,24 +8,29 @@ namespace Game.Components
 {
     public class CardController : MonoBehaviour
     {
+        [SerializeField] private UserData m_player;
+
         private int _countActiveTiles;
         private int _countSelectedTiles;
         Card _cardScript;
 
         private void Awake()
         {
+            Debug.Assert(m_player != null, "Player data not set in Card Controller");
             _cardScript = GetComponent<Card>();
             EventDispatcher.GetCountActiveTilesInField.AddListener(GetCountActiveTiles);
         }
 
         private void Update() {
-            _countSelectedTiles = Player.Instance.CountSelectedTiles;
+            //_countSelectedTiles = Player.Instance.CountSelectedTiles;
+            _countSelectedTiles = m_player.countSelectedTiles;
         }
 
         public void PlayCard()
         {
             // if(playerTurn)
-            _countActiveTiles = Player.Instance.CountActiveTiles;
+            //_countActiveTiles = Player.Instance.CountActiveTiles;
+            _countActiveTiles = m_player.countActiveTiles;
             // else if(IAturn)
             // _countActiveTiles = IA.Instance.countActiveTiles;
 
@@ -103,7 +108,8 @@ namespace Game.Components
         {
             //Debug.Log("count: " + count);
             //_countActiveTiles = count;
-            Player.Instance.CountActiveTiles = count;
+            //Player.Instance.CountActiveTiles = count;
+            m_player.countActiveTiles = count;
         }
 
         IEnumerator CountSelectedTiles()
@@ -115,7 +121,8 @@ namespace Game.Components
             EventDispatcher.DiscardTile?.Invoke();
             PlaceOnField();
             RemoveFromHand();
-            Player.Instance.CountSelectedTiles = 0;
+            //Player.Instance.CountSelectedTiles = 0;
+            m_player.countSelectedTiles = 0;
         }
     }
 }

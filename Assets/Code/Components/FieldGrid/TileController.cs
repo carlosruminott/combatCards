@@ -7,6 +7,8 @@ namespace Game.Components.Grid
 {
     public class TileController : MonoBehaviour
     {
+        [SerializeField] private UserData m_player;
+
         private Tile _tileScript;
         private FieldGrid _gridScript;
         private int _tilePosition;
@@ -17,6 +19,7 @@ namespace Game.Components.Grid
         private List<int> _tileShowPath = new List<int>();
 
         private void Awake() {
+            Debug.Assert(m_player != null, "Player data not set in Tile Controller");
             EventDispatcher.PlayCardToField.AddListener(canMove);
             EventDispatcher.PlayCardToFieldWithSacrifice.AddListener(DontMove);
         }
@@ -39,7 +42,8 @@ namespace Game.Components.Grid
             if(_isTimeToMove) return;
             if(_tileScript.isSelected) return;
             _tileScript.isSelected = true;
-            Player.Instance.CountSelectedTiles++;
+            //Player.Instance.CountSelectedTiles++;
+            m_player.countSelectedTiles++;
         }       
 
         public void ShowOrHidePathToMove() {

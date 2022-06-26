@@ -560,6 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b230ad9834ea2df4ca77522e161f0986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDisabled: 0
 --- !u!114 &-930299777460391016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db715883f8d366b4ca1bf418f1649665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_player: {fileID: 11400000, guid: 4975bb7193f0ffd43a18d0e06dc2ef04, type: 2}
 --- !u!1 &8497916142823795355
 GameObject:
   m_ObjectHideFlags: 0

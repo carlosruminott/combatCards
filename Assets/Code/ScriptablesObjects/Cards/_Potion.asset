@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a218e078245d1c4aa89b3d9bd66369c, type: 3}
-  m_Name: Potion
+  m_Name: _Potion
   m_EditorClassIdentifier: 
   cardType: 1
   cardImage: {fileID: 21300000, guid: cee2eca22156c1b4998ffed35cf622bd, type: 3}

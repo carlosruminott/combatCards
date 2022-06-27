@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: "Monta\xF1a elfica"
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 3
   level: 3
-  rarity: 0
+  rarity: 3
   cardName: "Monta\xF1a elfica"
-  desciption: '"Pierdes 1 punto de vida al jugar esta carta al campo. Cuando tus
-    jugadores de campo Elfos'
+  desciption: 
   energyCost: 2
   sacrificeCost: 0
   lifeValue: 1
@@ -30,4 +29,6 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: Pierdes 1 punto de vida al jugar esta carta al campo. Cuando
+    tus jugadores de campo Elfos, derroten a 1 jugador de campo de tu oponente, este
+    pierde 2 de vida

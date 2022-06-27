@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: "Distorci\xF3n"
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 3
   level: 2
-  rarity: 0
+  rarity: 2
   cardName: "Distorci\xF3n"
-  desciption: '"Esta carta se puede jugar una vez por turno. Tu opnente'
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: Esta carta se puede jugar una vez por turno. Tu opnente, y tu
+    descartan su mano y roban 4 cartas

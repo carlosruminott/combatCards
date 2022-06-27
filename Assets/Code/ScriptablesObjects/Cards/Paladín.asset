@@ -15,18 +15,19 @@ MonoBehaviour:
   cardImage: {fileID: 0}
   cardType: 0
   level: 3
-  rarity: 0
+  rarity: 3
   cardName: "Palad\xEDn"
   desciption: 
   energyCost: 0
-  sacrificeCost: 0
-  lifeValue: 0
-  healthPoints: 0
-  defense: 0
-  attack: 0
+  sacrificeCost: 1
+  lifeValue: 1
+  healthPoints: 6
+  defense: 4
+  attack: 6
   elementalType: {fileID: 0}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: "Antes de que ataquen por primera vez al Palad\xEDn, el atacante
+    es intimidado."

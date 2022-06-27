@@ -1,31 +1,32 @@
 using UnityEngine;
 
 namespace Game.Editor {
+
+    //tipo de carta:
+    //character: pesonaje jugable
+    //item: curacion, sumar ataque
+    //field: tarjeta que da alguna ventaja en campo
+    public enum CardType
+    {
+        Character,
+        Item,
+        AttachableItem,
+        Field,
+    };
+
+    public enum Rarity
+    {
+        Common,
+        Rare,
+        Epic,
+        Legendary,
+    }
+
     [CreateAssetMenu(fileName = "Card", menuName = "Game Data/New Card", order = 2)]
     public class BaseCard : ScriptableObject
     {
         [Header("Image")]
         public Sprite cardImage;
-
-        //tipo de carta:
-        //character: pesonaje jugable
-        //item: curacion, sumar ataque
-        //field: tarjeta que da alguna ventaja en campo
-        public enum CardType
-        {
-            Character,
-            Item,
-            AttachableItem,
-            Field,
-        };
-
-        public enum Rarity
-        {
-            Common,
-            Rare,
-            Epic,
-            Legendary,
-        }
 
         [Space(20)]
         public CardType cardType;

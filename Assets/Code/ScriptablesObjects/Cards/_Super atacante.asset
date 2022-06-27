@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a218e078245d1c4aa89b3d9bd66369c, type: 3}
-  m_Name: Hero
+  m_Name: _Super atacante
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 21300000, guid: 6be57daeb2795f54b8e23fd14900568c, type: 3}
+  cardImage: {fileID: 21300000, guid: c6dd81131e5ce004d8b610037e0c5f2d, type: 3}
   cardType: 0
-  level: 1
+  level: 2
   rarity: 0
-  cardName: Hero
-  desciption: First Card of the game
-  energyCost: 1
-  sacrificeCost: 0
+  cardName: Super Atacante
+  desciption: Second card enemy
+  energyCost: 0
+  sacrificeCost: 1
   lifeValue: 1
-  healthPoints: 20
-  defense: 4
-  attack: 2
-  elementalType: {fileID: 11400000, guid: feef4dfc1fce777498bcc8a7d0a8d7af, type: 2}
+  healthPoints: 10
+  defense: 0
+  attack: 5
+  elementalType: {fileID: 11400000, guid: 84535cef315f33b49a90c59446cc5dc7, type: 2}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
-  ability: {fileID: 5121561287512968178, guid: 3bfceb9b433234441a84edf53f47aac0, type: 3}
+  ability: {fileID: 0}
   abilityDesciption: 

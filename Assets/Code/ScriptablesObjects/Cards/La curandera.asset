@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: La curandera
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 1
   level: 1
   rarity: 0
   cardName: La curandera
-  desciption: "Gasta 1 punto de energ\xEDa para curar 1 jugador del campo"
+  desciption: 
   energyCost: 1
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,4 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: "Gasta 1 punto de energ\xEDa para curar 1 jugador del campo"

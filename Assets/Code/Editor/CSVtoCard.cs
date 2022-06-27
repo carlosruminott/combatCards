@@ -1,19 +1,13 @@
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Game.Editor {
+
     public class CSVtoCard
     {
         public static string cardsCSVPath = "/Code/Editor/CSVs/card-list.csv";
-
-        private enum CardType
-        {
-            Character,
-            Item,
-            AttachableItem,
-            Field,
-        };
 
         [MenuItem("Card Utilities/Generate Cards")]
         public static void GenerateCards() {
@@ -22,25 +16,28 @@ namespace Game.Editor {
             foreach (var line in AllLines)
             {
                 
-                string[] splitData = line.Split(",");
-
+                //string[] splitData = line.Split(",");
+                string[] splitData = Regex.Split(line, "[,]{1}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
                 if(splitData[0] == "Type") continue;
 
                 BaseCard card = ScriptableObject.CreateInstance<BaseCard>();
-
-                //card.cardType = DefineCardType(splitData[0]);
+                
+                card.cardType = DefineCardType(splitData[0]);
                 card.level = int.Parse(splitData[1]);
-                //card.rarity = splitData[2];
+                card.rarity = DefineRarity(splitData[2]);
                 card.cardName = splitData[3];
                 //card.elementalType = splitData[3]; // agregar ruta scriptable object
-                card.energyCost = splitData[5] == "-" ? 0 : int.Parse(splitData[5]);
-                card.sacrificeCost = splitData[6] == "-" ? 0 : int.Parse(splitData[6]);
-                card.healthPoints = splitData[7] == "-" ? 0 : int.Parse(splitData[7]);
-                card.attack = splitData[8] == "-" ? 0 : int.Parse(splitData[8]);
-                card.defense = splitData[9] == "-" ? 0 : int.Parse(splitData[9]);
-                card.lifeValue = splitData[10] == "-" ? 0 : int.Parse(splitData[10]);
-                card.abilityDesciption = splitData[11];
-                card.desciption = splitData[12];
+                card.energyCost = SanatizeInt(splitData[5]) ;
+                card.sacrificeCost = SanatizeInt(splitData[6]) ;
+                card.healthPoints = SanatizeInt(splitData[7]);
+                card.attack = SanatizeInt(splitData[8]);
+                card.defense = SanatizeInt(splitData[9]);
+                card.lifeValue = SanatizeInt(splitData[10]);
+                // card.ability = splitData[11]; // instanciar prefab ability
+                card.abilityDesciption = RemoveQuote(splitData[12]);
+                card.desciption = RemoveQuote(splitData[13]);
+
+                LoadSO(splitData[3]);
 
                 AssetDatabase.CreateAsset(card, $"Assets/Code/ScriptablesObjects/Cards/{card.cardName}.asset");
                 
@@ -55,6 +52,35 @@ namespace Game.Editor {
             if(type == "Item Attachable") return CardType.AttachableItem;
             if(type == "Field") return CardType.Field;
             return CardType.Character;
+        }
+
+        private static Rarity DefineRarity(string rarity) {
+            if(rarity == "Common") return Rarity.Common;
+            if(rarity == "Epic") return Rarity.Epic;
+            if(rarity == "Rare") return Rarity.Rare;
+            if(rarity == "Legendary") return Rarity.Legendary;
+            return Rarity.Common;
+        }
+
+        private static int SanatizeInt(string s) {
+            if(s.Length == 0) return 0;
+            return int.Parse(s.Trim().Replace("-", "0"));
+        }
+
+        private static string RemoveQuote(string s) {
+            if(s.Length == 0) return "";
+            return s.Trim('"');
+        }
+
+        private static void LoadSO(string factionName) {
+            var fsos = AssetDatabase.FindAssets(factionName, new[] {"Assets/Code/ScriptablesObjects/Factions"});
+
+            foreach (string faction in fsos)
+            {
+                Debug.Log(AssetDatabase.GUIDToAssetPath(faction));
+                //var soPath = AssetDatabase.GUIDToAssetPath(so);
+                // return AssetDatabase.LoadAssetAtPath<Faction>(soPath);
+            }
         }
     }
 }

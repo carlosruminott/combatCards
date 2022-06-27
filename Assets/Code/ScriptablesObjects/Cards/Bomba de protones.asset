@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Bomba de protones
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 1
   level: 1
-  rarity: 0
+  rarity: 2
   cardName: Bomba de protones
-  desciption: '"Elije un jugador de campo'
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: "Elije un jugador de campo, y este puede hace 1 punto de da\xF1o
+    extra a los casilleros contiguos por este turno"

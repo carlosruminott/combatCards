@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: "Muralla m\xE1gica"
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 1
   level: 2
-  rarity: 0
+  rarity: 1
   cardName: "Muralla m\xE1gica"
-  desciption: '"Esta carta se puede jugar cuando eres atacado'
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: Esta carta se puede jugar cuando eres atacado, lanza una moneda,
+    si sale cara, evita el ataque del jugador en el campo que elijas

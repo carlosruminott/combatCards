@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: "Resurrecci\xF3n"
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 1
   level: 1
   rarity: 0
   cardName: "Resurrecci\xF3n"
-  desciption: '"Descarta 1 carta de tu mano'
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: Descarta 1 carta de tu mano, y devuelve dos cartas que elijas
+    de tu pila de descarte a tu mazo

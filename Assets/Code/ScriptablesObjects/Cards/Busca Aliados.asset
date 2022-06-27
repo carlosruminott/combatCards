@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Busca Aliados
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 1
   level: 1
   rarity: 0
   cardName: Busca Aliados
-  desciption: Busca 1 jugador de campo en el mazo y ponla en tu mano
+  desciption: 
   energyCost: 1
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,4 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: Busca 1 jugador de campo en el mazo y ponla en tu mano

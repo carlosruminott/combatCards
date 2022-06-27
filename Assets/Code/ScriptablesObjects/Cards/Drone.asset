@@ -17,7 +17,7 @@ MonoBehaviour:
   level: 1
   rarity: 0
   cardName: Drone
-  desciption: Ataca a 2 o 3 bloques de distancia
+  desciption: 
   energyCost: 1
   sacrificeCost: 0
   lifeValue: 1
@@ -29,4 +29,4 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: Ataca a 2 o 3 bloques de distancia

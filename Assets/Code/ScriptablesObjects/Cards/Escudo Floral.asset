@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Escudo Floral
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 3
   level: 2
-  rarity: 0
+  rarity: 1
   cardName: Escudo Floral
-  desciption: "Aumenta 5 de defensa a tus jugadores de campo que sean facci\xF3n
-    Forest"
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -30,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: "Aumenta 5 de defensa a tus jugadores de campo que sean facci\xF3n
+    Forest"

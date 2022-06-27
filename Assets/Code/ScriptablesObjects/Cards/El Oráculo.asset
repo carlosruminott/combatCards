@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: "El Or\xE1culo"
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 1
   level: 1
-  rarity: 0
+  rarity: 1
   cardName: "El Or\xE1culo"
-  desciption: "Obt\xE9n 1 punto extra de energ\xEDa"
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,4 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: "Obt\xE9n 1 punto extra de energ\xEDa"

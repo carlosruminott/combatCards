@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: El comodoro
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 1
   level: 1
-  rarity: 0
+  rarity: 1
   cardName: El comodoro
-  desciption: '"Descarta 2 cartas de la mano y tira el dado'
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: Descarta 2 cartas de la mano y tira el dado, roba tantas cartas
+    del mazo, como el dado indique

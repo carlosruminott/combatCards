@@ -15,9 +15,9 @@ MonoBehaviour:
   cardImage: {fileID: 0}
   cardType: 0
   level: 3
-  rarity: 0
+  rarity: 3
   cardName: Destructor
-  desciption: '"Ataca un objetivo'
+  desciption: 
   energyCost: 0
   sacrificeCost: 2
   lifeValue: 1
@@ -29,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: "Ataca un objetivo, hace 1 de da\xF1o al resto de compa\xF1eros
+    de campo del contrario"

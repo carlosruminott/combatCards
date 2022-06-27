@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: "Cura m\xE1gica"
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 3
   level: 2
-  rarity: 0
+  rarity: 2
   cardName: "Cura m\xE1gica"
-  desciption: Todos tus Magos en campo se restauran 1 HP en tu turno
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -29,4 +29,4 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: Todos tus Magos en campo se restauran 1 HP en tu turno

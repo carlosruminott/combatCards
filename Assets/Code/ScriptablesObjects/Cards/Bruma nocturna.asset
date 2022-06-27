@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Bruma nocturna
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 3
   level: 3
-  rarity: 0
+  rarity: 2
   cardName: Bruma nocturna
-  desciption: "\"Cada vez que tu openente intente atacar a un jugador tuyo de facci\xF3n
-    Ghost"
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -30,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: "Cada vez que tu openente intente atacar a un jugador tuyo de
+    facci\xF3n Ghost, tu oponente tira la moneda, si sale seca, no puede atacar"

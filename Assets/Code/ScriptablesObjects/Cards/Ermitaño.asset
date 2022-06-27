@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: "Ermita\xF1o"
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 1
   level: 1
-  rarity: 0
+  rarity: 2
   cardName: "Ermita\xF1o"
-  desciption: "Devuelve una carta en juego a tu mano con todas las cartas unidas
-    a \xE9l"
+  desciption: 
   energyCost: 0
   sacrificeCost: 0
   lifeValue: 0
@@ -30,4 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   ability: {fileID: 0}
-  abilityDesciption: 
+  abilityDesciption: "Devuelve una carta en juego a tu mano con todas las cartas
+    unidas a \xE9l"

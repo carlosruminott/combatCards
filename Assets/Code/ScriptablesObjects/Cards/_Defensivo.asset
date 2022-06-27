@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a218e078245d1c4aa89b3d9bd66369c, type: 3}
-  m_Name: Defensivo
+  m_Name: _Defensivo
   m_EditorClassIdentifier: 
   cardImage: {fileID: 21300000, guid: 61095cfde71f40246b49befb393410ca, type: 3}
   cardType: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
   healthPoints: 10
   defense: 10
   attack: 1
-  elementalType: {fileID: 11400000, guid: f73041cf3920b6846a3ab3f006eb3b19, type: 2}
+  elementalType: {fileID: 11400000, guid: 20ec799559ba72642be7d7e47acef244, type: 2}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1

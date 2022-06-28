@@ -24,9 +24,10 @@ MonoBehaviour:
   healthPoints: 6
   defense: 2
   attack: 2
-  elementalType: {fileID: 0}
+  elementalType: {fileID: 11400000, guid: ca8483261712b8e479ddf57f13c56b71, type: 2}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
+  abilityName: 
   ability: {fileID: 0}
   abilityDesciption: Al tener 2 cartas de Red workers en juego, se duplican la fuerza

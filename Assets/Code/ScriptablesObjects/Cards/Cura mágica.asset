@@ -24,9 +24,10 @@ MonoBehaviour:
   healthPoints: 0
   defense: 0
   attack: 0
-  elementalType: {fileID: 0}
+  elementalType: {fileID: 11400000, guid: 9e59bdd18dfc240469b8af1f289d72c0, type: 2}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
+  abilityName: 
   ability: {fileID: 0}
   abilityDesciption: Todos tus Magos en campo se restauran 1 HP en tu turno

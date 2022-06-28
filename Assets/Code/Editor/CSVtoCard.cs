@@ -34,10 +34,11 @@ namespace Game.Editor {
                 card.defense = SanatizeInt(splitData[9]);
                 card.lifeValue = SanatizeInt(splitData[10]);
                 // card.ability = splitData[11]; // instanciar prefab ability
+                card.abilityName = splitData[11];
                 card.abilityDesciption = RemoveQuote(splitData[12]);
                 card.desciption = RemoveQuote(splitData[13]);
 
-                LoadSO(splitData[3]);
+                card.elementalType = LoadSO(splitData[4]);
 
                 AssetDatabase.CreateAsset(card, $"Assets/Code/ScriptablesObjects/Cards/{card.cardName}.asset");
                 
@@ -72,15 +73,16 @@ namespace Game.Editor {
             return s.Trim('"');
         }
 
-        private static void LoadSO(string factionName) {
+        private static ScriptableObject LoadSO(string factionName) {
             var fsos = AssetDatabase.FindAssets(factionName, new[] {"Assets/Code/ScriptablesObjects/Factions"});
 
             foreach (string faction in fsos)
             {
-                Debug.Log(AssetDatabase.GUIDToAssetPath(faction));
-                //var soPath = AssetDatabase.GUIDToAssetPath(so);
-                // return AssetDatabase.LoadAssetAtPath<Faction>(soPath);
+                //Debug.Log(AssetDatabase.GUIDToAssetPath(faction));
+                var soPath = AssetDatabase.GUIDToAssetPath(faction);
+                return AssetDatabase.LoadAssetAtPath<ScriptableObject>(soPath);
             }
+            return null;
         }
     }
 }

@@ -24,10 +24,11 @@ MonoBehaviour:
   healthPoints: 0
   defense: 0
   attack: 0
-  elementalType: {fileID: 0}
+  elementalType: {fileID: 11400000, guid: 4f5833c1e3109044597a8ec5daafaa10, type: 2}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
+  abilityName: 
   ability: {fileID: 0}
   abilityDesciption: Descarta 1 carta de tu mano, y suma 4 de ataque por 1 turno
     al jugador de campo que elijas

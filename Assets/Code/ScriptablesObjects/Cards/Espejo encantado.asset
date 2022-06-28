@@ -24,10 +24,11 @@ MonoBehaviour:
   healthPoints: 5
   defense: 2
   attack: 0
-  elementalType: {fileID: 0}
+  elementalType: {fileID: 11400000, guid: 7e5e5689baa4f1d49807c73e0e8d913d, type: 2}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
+  abilityName: 
   ability: {fileID: 0}
   abilityDesciption: Cuando se juega esta carta al campo, copia el nivel de ataque
     de un jugador de campo del oponente

@@ -72,6 +72,7 @@ namespace Game.Editor {
 
         [Space(20)]
         [Header("Ability")]
+        public string abilityName;
         public GameObject ability;
         [TextArea(3, 10)] public string abilityDesciption;
     }

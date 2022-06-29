@@ -28,6 +28,6 @@ MonoBehaviour:
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
-  abilityName: 
+  abilityName: Distancia
   ability: {fileID: 0}
-  abilityDesciption: Ataca a 2 o 3 bloques de distancia
+  abilityDesciption: Puede atacar a 1 casillero de distancia

@@ -28,7 +28,7 @@ MonoBehaviour:
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
-  abilityName: 
+  abilityName: Intimidate
   ability: {fileID: 0}
   abilityDesciption: "Antes de que ataquen por primera vez al Palad\xEDn, el atacante
     es intimidado."

@@ -24,11 +24,11 @@ MonoBehaviour:
   healthPoints: 7
   defense: 3
   attack: 3
-  elementalType: {fileID: 11400000, guid: 7e5e5689baa4f1d49807c73e0e8d913d, type: 2}
+  elementalType: {fileID: 0}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
   abilityName: 
-  ability: {fileID: 0}
+  ability: {fileID: 5121561287512968178, guid: 3bfceb9b433234441a84edf53f47aac0, type: 3}
   abilityDesciption: "Su ataque siempre es cr\xEDtico. Ignora la defenda del adversario
     o bajadas de estad\xEDsitcas de ataque."

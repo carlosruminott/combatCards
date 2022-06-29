@@ -48,13 +48,11 @@ namespace Game.Components
             _name.text = _cardInfo.cardName;
             _description.text = _cardInfo.desciption;
 
-
             if (_cardInfo.ability != null)
             {
-                var cardAbility = _cardInfo.ability;
-                //TODO: ver cuando ejecutamos habilidad segun metodos de eactivación
-                //_ability = cardAbility.GetComponent(cardAbility.name) as Ability;
-                //_ability?.PlayAbility();
+                //TODO: ver cuando ejecutamos habilidad segun metodos de eactivaciÃ³n
+                _ability = _cardInfo.ability.GetComponent(_cardInfo.ability.name) as Ability;
+                _ability?.PlayAbility();
             }
 
             if (_cardInfo.cardType.ToString() == "Character")

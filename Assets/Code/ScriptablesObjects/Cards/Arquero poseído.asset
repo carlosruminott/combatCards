@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d2cfd8a462aa14986301438dbfbc69, type: 3}
+  m_Name: "Arquero pose\xEDdo"
+  m_EditorClassIdentifier: 
+  cardImage: {fileID: 0}
+  cardType: 0
+  level: 1
+  rarity: 0
+  cardName: "Arquero pose\xEDdo"
+  desciption: 
+  energyCost: 1
+  sacrificeCost: 0
+  lifeValue: 1
+  healthPoints: 3
+  defense: 2
+  attack: 1
+  elementalType: {fileID: 0}
+  condition: 0
+  itCanBeMoved: 1
+  advanceBlocks: 1
+  abilityName: Distancia
+  ability: {fileID: 0}
+  abilityDesciption: Puede atacar a 1 casillero de distancia

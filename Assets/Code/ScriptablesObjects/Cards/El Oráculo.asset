@@ -29,5 +29,5 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   abilityName: 
-  ability: {fileID: 0}
+  ability: {fileID: 5121561287512968178, guid: 3bfceb9b433234441a84edf53f47aac0, type: 3}
   abilityDesciption: "Obt\xE9n 1 punto extra de energ\xEDa"

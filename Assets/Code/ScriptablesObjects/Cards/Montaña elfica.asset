@@ -29,7 +29,7 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   abilityName: 
-  ability: {fileID: 0}
+  ability: {fileID: 5121561287512968178, guid: 3bfceb9b433234441a84edf53f47aac0, type: 3}
   abilityDesciption: Pierdes 1 punto de vida al jugar esta carta al campo. Cuando
     tus jugadores de campo Elfos, derroten a 1 jugador de campo de tu oponente, este
     pierde 2 de vida

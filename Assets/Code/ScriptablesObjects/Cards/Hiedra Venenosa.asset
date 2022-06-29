@@ -28,6 +28,6 @@ MonoBehaviour:
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
-  abilityName: 
+  abilityName: Envenena
   ability: {fileID: 0}
-  abilityDesciption: Envenena al atacar, o si es atacada
+  abilityDesciption: Envenena al oponente al atacar, o si es atacada

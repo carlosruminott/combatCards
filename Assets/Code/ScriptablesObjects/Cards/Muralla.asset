@@ -22,13 +22,13 @@ MonoBehaviour:
   sacrificeCost: 0
   lifeValue: 0
   healthPoints: 0
-  defense: 5
+  defense: 2
   attack: 0
   elementalType: {fileID: 11400000, guid: 4f5833c1e3109044597a8ec5daafaa10, type: 2}
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
   abilityName: 
-  ability: {fileID: 0}
-  abilityDesciption: Esta carta se puede jugar cuando eres atacado, Otorga 5 de defensa
+  ability: {fileID: 5121561287512968178, guid: 3bfceb9b433234441a84edf53f47aac0, type: 3}
+  abilityDesciption: Esta carta se puede jugar cuando eres atacado, Otorga 2 de defensa
     a un jugador de campo que elijas

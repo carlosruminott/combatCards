@@ -29,6 +29,6 @@ MonoBehaviour:
   itCanBeMoved: 1
   advanceBlocks: 1
   abilityName: 
-  ability: {fileID: 0}
+  ability: {fileID: 5121561287512968178, guid: 3bfceb9b433234441a84edf53f47aac0, type: 3}
   abilityDesciption: "Todos tus magos tienen 0 costo de energ\xEDa al atacar el pr\xF3ximo
     turno"

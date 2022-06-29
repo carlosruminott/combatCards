@@ -39,6 +39,7 @@ namespace Game.Editor {
                 card.desciption = RemoveQuote(splitData[13]);
 
                 card.elementalType = LoadSO(splitData[4]);
+                card.ability = LoadGO(splitData[11]);
 
                 AssetDatabase.CreateAsset(card, $"Assets/Code/ScriptablesObjects/Cards/{card.cardName}.asset");
                 
@@ -81,6 +82,18 @@ namespace Game.Editor {
                 //Debug.Log(AssetDatabase.GUIDToAssetPath(faction));
                 var soPath = AssetDatabase.GUIDToAssetPath(faction);
                 return AssetDatabase.LoadAssetAtPath<ScriptableObject>(soPath);
+            }
+            return null;
+        }
+
+        private static GameObject LoadGO(string prefabName) {
+            var prefabs = AssetDatabase.FindAssets(prefabName, new[] {"Assets/Prefab/Abilities"});
+
+            foreach (string prefab in prefabs)
+            {
+                Debug.Log(AssetDatabase.GUIDToAssetPath(prefab));
+                var prefabPath = AssetDatabase.GUIDToAssetPath(prefab);
+                return AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
             }
             return null;
         }

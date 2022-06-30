@@ -87,15 +87,14 @@ namespace Game.Components
 
         private bool CardHasHability()
         {
-            //return (_cardScript.CardInfo.ability) ? true : false ;
-            Ability ability = GetComponent<Ability>();
-            return (ability) ? true : false;
+            return (_cardScript.CardInfo.ability) ? true : false ;
         }
 
         private void PlayAbility()
         {
-            // Ability ability = _cardScript.CardInfo.ability.GetComponent<Ability>();
-            Ability ability = GetComponent<Ability>();
+            var abilityPrefab = _cardScript.CardInfo.ability;
+            Debug.Log(abilityPrefab.name);
+            Ability ability = abilityPrefab.GetComponent(abilityPrefab.name) as Ability;
             ability.OnActivate();
         }
 

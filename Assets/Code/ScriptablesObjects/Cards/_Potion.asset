@@ -12,13 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a218e078245d1c4aa89b3d9bd66369c, type: 3}
   m_Name: _Potion
   m_EditorClassIdentifier: 
-  cardType: 1
   cardImage: {fileID: 21300000, guid: cee2eca22156c1b4998ffed35cf622bd, type: 3}
+  cardType: 1
+  level: 1
+  rarity: 0
   cardName: Potion
   desciption: Health 5 HP
+  energyCost: 0
+  sacrificeCost: 0
+  lifeValue: 0
   healthPoints: 0
   defense: 0
   attack: 0
   elementalType: {fileID: 0}
-  ability: {fileID: 0}
+  condition: 0
+  itCanBeMoved: 1
+  advanceBlocks: 1
+  abilityName: Potion
+  ability: {fileID: 5121561287512968178, guid: 5eb636caa0d68b345b3b1afa155c352f, type: 3}
   abilityDesciption: 

@@ -60,6 +60,7 @@ namespace Game.Components
                     break;
                 case BaseCard.CardType.Item:
                     if (CardHasHability()) PlayAbility();
+                    
                     Discard();
                     break;
                 case BaseCard.CardType.AttachableItem:
@@ -90,6 +91,7 @@ namespace Game.Components
             return (_cardScript.CardInfo.ability) ? true : false ;
         }
 
+        // TODO convertir en coroutine y que devuelva true cuando hablididad se jugó
         private void PlayAbility()
         {
             var abilityPrefab = _cardScript.CardInfo.ability;

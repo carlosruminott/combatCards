@@ -32,7 +32,7 @@ namespace Game.Components.Grid
             if (isDisabled) return;
             //Debug.Log("overr");
             TileCardView _tileCardScript = transform.GetChild(1).gameObject.GetComponent<TileCardView>();
-            EventDispatcher.ZoomIn?.Invoke(_tileCardScript.cardInfo);
+            EventDispatcher.ZoomIn?.Invoke(_tileCardScript.CardInfo);
         }
 
         public void OnPointerExit(PointerEventData eventData)

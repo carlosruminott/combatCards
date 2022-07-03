@@ -81,7 +81,7 @@ namespace Game.Components.Grid
                     var tileButton = tile.transform.Find("TileButton").gameObject;
                     var childOfButtonText = tileButton.transform.GetChild(0).gameObject;
                     var childOfButton = tileButton.transform.GetChild(1);
-                    var cardInfo = childOfButton.GetComponent<TileCardView>().cardInfo;
+                    var cardInfo = childOfButton.GetComponent<TileCardView>().CardInfo;
                     childOfButtonText.SetActive(true);
                     tileButton.SetActive(false);
                     tileScript.isTileActive = false;

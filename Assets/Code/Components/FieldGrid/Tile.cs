@@ -40,7 +40,7 @@ namespace Game.Components.Grid
 
         private void GetInfoCard(BaseCard cardInfo)
         {
-            _tileCardScript.cardInfo = cardInfo;
+            _tileCardScript.SetCardInfo = cardInfo;
             _tileCardScript.tileCardName = cardInfo.cardName;
         }
 

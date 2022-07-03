@@ -8,14 +8,17 @@ namespace Game.Components.Grid
     public class TileCardView : MonoBehaviour
     {
         public string tileCardName;
-        public BaseCard cardInfo;
+        public int healthPoint;
+        public int attack;
+        public int defense;
 
+        public BaseCard CardInfo {get { return _cardInfo; }}
+        public BaseCard SetCardInfo {set { _cardInfo = value; }}
+
+        [SerializeField] private BaseCard _cardInfo;
+        [SerializeField] private int _maxHealthPoint;
         [SerializeField] private TextMeshProUGUI _tileCardName;
         [SerializeField] private TextMeshProUGUI _hp, _atk, _def;
-
-        [SerializeField] private int _healthPoint;
-        [SerializeField] private int _attack;
-        [SerializeField] private int _defense;
 
         private void Start()
         {
@@ -32,16 +35,17 @@ namespace Game.Components.Grid
 
         private void InitInfo() {
             _tileCardName.text = tileCardName;
-            _healthPoint = cardInfo.healthPoints;
-            _attack = cardInfo.attack;
-            _defense = cardInfo.defense;
+            healthPoint = _cardInfo.healthPoints;
+            _maxHealthPoint = _cardInfo.healthPoints;
+            attack = _cardInfo.attack;
+            defense = _cardInfo.defense;
             DisplayInfo();
         }
 
         private void DisplayInfo() {
-            _hp.text = _healthPoint.ToString();
-            _atk.text = _attack.ToString();
-            _def.text = _defense.ToString();
+            _hp.text = healthPoint.ToString();
+            _atk.text = attack.ToString();
+            _def.text = defense.ToString();
         }
     }
 }

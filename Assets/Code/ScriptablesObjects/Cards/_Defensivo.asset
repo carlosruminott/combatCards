@@ -28,5 +28,6 @@ MonoBehaviour:
   condition: 0
   itCanBeMoved: 1
   advanceBlocks: 1
+  abilityName: 
   ability: {fileID: 0}
   abilityDesciption: 

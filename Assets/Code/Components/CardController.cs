@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,25 +54,36 @@ namespace Game.Components
                         Debug.Log("ya no se puede jugar cartas al campo");
                         return;
                     }else {
-                        if (CardHasHability()) PlayAbility();
-                        PlaceOnField();
-                        RemoveFromHand();
+                        if (CardHasHability()) {
+                            PlayAbility(PlaceOnField,RemoveFromHand);
+                        }else {
+                            PlaceOnField();
+                            RemoveFromHand();
+                        }
                     }
                     break;
                 case BaseCard.CardType.Item:
-                    if (CardHasHability()) PlayAbility();
-                    
-                    Discard();
+                    if (CardHasHability()) {
+                        PlayAbility(Discard);
+                    }else {
+                        Discard();
+                    }
                     break;
                 case BaseCard.CardType.AttachableItem:
-                    if (CardHasHability()) PlayAbility();
-                    AttachOnItem();
-                    RemoveFromHand();
+                    if (CardHasHability()) {
+                        PlayAbility(AttachOnItem,RemoveFromHand);
+                    }else {
+                        AttachOnItem();
+                        RemoveFromHand();
+                    }
                     break;
                 case BaseCard.CardType.Field:
-                    if (CardHasHability()) PlayAbility();
-                    PlaceOnField();
-                    RemoveFromHand();
+                    if (CardHasHability()) {
+                        PlayAbility(PlaceOnField,RemoveFromHand);
+                    }else{
+                        PlaceOnField();
+                        RemoveFromHand();
+                    }
                     break;
                 default:
                     break;
@@ -91,13 +103,20 @@ namespace Game.Components
             return (_cardScript.CardInfo.ability) ? true : false ;
         }
 
-        // TODO convertir en coroutine y que devuelva true cuando hablididad se jugó
-        private void PlayAbility()
+        private void PlayAbility(Action action1, Action action2 = null)
         {
             var abilityPrefab = _cardScript.CardInfo.ability;
             Debug.Log(abilityPrefab.name);
             Ability ability = abilityPrefab.GetComponent(abilityPrefab.name) as Ability;
             ability.OnActivate();
+            StartCoroutine(AbilityWasPlayed(ability, action1, action2));
+        }
+
+        IEnumerator AbilityWasPlayed(Ability ability, Action action1, Action action2) {
+            yield return new WaitUntil(() => ability.WasPlayed == true);
+            action1();
+            if(action2 != null) action2(); 
+            Debug.Log("terminó coroutina");
         }
 
         private void PlaceOnField()

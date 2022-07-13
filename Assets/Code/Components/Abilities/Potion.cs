@@ -27,6 +27,7 @@ namespace Game.Components.Abilities {
                 TileCardController tileCardController = go.GetComponentInChildren<TileCardController>();
                 tileCardController.Heal(_healPoints);
                 _active = false;
+                WasPlayed = true;
             }
         }
     }

@@ -1,3 +1,5 @@
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,6 +52,7 @@ namespace Game.Components.Grid
             _isTileActive = true;
             Instantiate(_tileCard, _tileCardButton.transform);
             _tileCardButtonText.SetActive(false);
+            EventDispatcher.GetActiveTileInField?.Invoke(Int32.Parse(transform.name));
             EventDispatcher.TileSapwned?.Invoke();
             EventDispatcher.ZoomOut?.Invoke();
         }

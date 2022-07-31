@@ -1,4 +1,5 @@
 using Game.Logic;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace Game.Components.Grid
 
         public List<GameObject> tileList {get { return _tiles; }}
         public int countActiveTiles {get { return _countActiveTiles; }}
+        public List<int> activeTiles = new List<int>();
 
         private void Awake()
         {
@@ -26,6 +28,7 @@ namespace Game.Components.Grid
             EventDispatcher.TileSapwned.AddListener(DeactiveTilesButtons);
             EventDispatcher.SendInt.AddListener(ActiveTileButton);
             EventDispatcher.DiscardTile.AddListener(DiscardTiles);
+            EventDispatcher.GetActiveTileInField.AddListener(SetActiveTileList);
         }
 
         private void Start()
@@ -70,6 +73,10 @@ namespace Game.Components.Grid
             _tiles[tilePosition].transform.Find("TileButton").gameObject.SetActive(true);
         }
 
+        private void SetActiveTileList(int tileNumber) {
+            activeTiles.Add(tileNumber);
+        }
+
         private void DiscardTiles()
         {
             foreach (var tile in _tiles)
@@ -88,6 +95,7 @@ namespace Game.Components.Grid
                     tileScript.isSelected = false;
                     Destroy(childOfButton.gameObject);
                     EventDispatcher.Discard?.Invoke(cardInfo);
+                    activeTiles.Remove(Int32.Parse(tile.gameObject.name));
                 }
             }
         }

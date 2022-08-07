@@ -5,6 +5,7 @@ using Game.Logic;
 using Game.Components.Grid;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace Game.Components.Abilities {
     public class Potion : Ability
@@ -37,19 +38,17 @@ namespace Game.Components.Abilities {
 
                         // y agregarle el listener
                         tileButton.GetComponent<Button>().onClick.AddListener(() => {
-                                var goButton = transform.gameObject;
-                                Heal(goButton);
+                                Heal(tile);
                             });
                     }
                 }
             }
 
-
         }
 
         public void Heal(GameObject go) {
             if(IsActive) {
-                //Debug.Log(go.name);
+                Debug.Log("el nombre del game object es "+go.name);
                 TileCardController tileCardController = go.GetComponentInChildren<TileCardController>();
                 tileCardController.Heal(_healPoints);
                 _active = false;

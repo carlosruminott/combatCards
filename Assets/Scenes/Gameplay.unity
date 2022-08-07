@@ -980,6 +980,7 @@ MonoBehaviour:
   _tile: {fileID: 4084791008640095974, guid: 6f46a3e3efa81aa49ade5faa618e37dc, type: 3}
   _tileNumber: 36
   _tiles: []
+  activeTiles: 
 --- !u!1 &1236038484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,6 +1418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f8f7c5bc016ab4288b2a88e3f1b75d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldScript: {fileID: 0}
+  m_fieldGrid: {fileID: 836986875}
 --- !u!224 &1847908353 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8497916142787673896, guid: 4fc057d7ab7e87d4a8446b5aafeedb16, type: 3}

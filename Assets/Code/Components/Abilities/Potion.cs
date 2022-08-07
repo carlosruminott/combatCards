@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Logic;
@@ -22,15 +23,28 @@ namespace Game.Components.Abilities {
             //TODO:
             //seleccionar carta en campo y restaurarle 2 puntos de vida
 
-            //hay que obtener los tile buttons de los gameobjects de la grilla del 30 al 35 o que estén activos
-            
+            //hay que obtener los tile buttons de los gameobjects de la grilla que estén activos
+            var tileList = Game.Instance.fieldScript.tileList;
+            var activeTilesID = Game.Instance.fieldScript.activeTiles;
+
+            foreach (var id in activeTilesID)
+            {
+                foreach (var tile in tileList)
+                {
+                    if(id == Int32.Parse(tile.name)) {
+                        
+                        var tileButton = tile.transform.Find("TileButton").gameObject;
+
+                        // y agregarle el listener
+                        tileButton.GetComponent<Button>().onClick.AddListener(() => {
+                                var goButton = transform.gameObject;
+                                Heal(goButton);
+                            });
+                    }
+                }
+            }
 
 
-            // y agregarle el listener
-            GetComponentInParent<Button>().onClick.AddListener(() => {
-                    var goButton = transform.gameObject;
-                    Heal(goButton);
-                });
         }
 
         public void Heal(GameObject go) {

@@ -9,17 +9,18 @@ namespace Game.Components
     public class Game : MonoBehaviour
     {
         public static Game Instance;
+        public FieldGrid fieldScript;
 
         [SerializeField] private GameObject m_fieldGrid;
 
         private void Awake() {
-            if(Instance != null) Instance = this;
+            if(Instance == null) Instance = this;
             Debug.Assert(m_fieldGrid != null, "missing field grid game object on [" + gameObject.name + "]");
+            fieldScript = m_fieldGrid.GetComponent<FieldGrid>();
             EventDispatcher.SendInt.AddListener(ShowLogActiveTiles);
         } 
 
         private void ShowLogActiveTiles(int nada) {
-            var fieldScript = m_fieldGrid.GetComponent<FieldGrid>();
             foreach (var item in fieldScript.activeTiles)
             {
                 Debug.Log(item);
